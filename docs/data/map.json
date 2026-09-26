@@ -1,0 +1,540 @@
+{
+  "groups": [
+    {
+      "name": "1. Quel système ?",
+      "ids": [
+        "physical",
+        "resources",
+        "actors"
+      ]
+    },
+    {
+      "name": "2. Quelles décisions ?",
+      "ids": [
+        "actions",
+        "time",
+        "criteria"
+      ]
+    },
+    {
+      "name": "3. Quelle coordination ?",
+      "ids": [
+        "information",
+        "communication",
+        "computation"
+      ]
+    },
+    {
+      "name": "4. Quels résultats ?",
+      "ids": [
+        "guarantees",
+        "evaluation"
+      ]
+    }
+  ],
+  "refs": {
+    "parisio": {
+      "name": "Parisio et al. · 2017",
+      "url": "https://doi.org/10.1109/TSG.2017.2726941",
+      "title": "Cooperative MPC-based Energy Management for Networked Microgrids",
+      "status": "Classification partielle"
+    },
+    "guo": {
+      "name": "Guo et al. · 2018",
+      "url": "https://doi.org/10.1109/TII.2017.2749264",
+      "title": "Hierarchical decentralized optimization architecture for economic dispatch",
+      "status": "Classification partielle"
+    },
+    "alghamdi": {
+      "name": "Alghamdi · 2026",
+      "url": "https://doi.org/10.1371/journal.pone.0345857",
+      "title": "Resilient distributed model predictive control for cooperative microgrids under communication loss with demand response integration",
+      "correction": {
+        "url": "https://doi.org/10.1371/journal.pone.0352945",
+        "note": "Correction du 30 juin 2026 concernant le fichier de code supplémentaire S2."
+      },
+      "status": "Classification partielle"
+    },
+    "zhou": {
+      "name": "Zhou, Zamzam et Bernstein · 2026",
+      "url": "https://doi.org/10.1016/j.epsr.2025.112557",
+      "title": "Networked microgrid topology reconfiguration to promote fairness in proactive load shedding",
+      "status": "Classification partielle"
+    }
+  },
+  "nodes": {
+    "physical": {
+      "name": "Réseau électrique",
+      "attrs": [
+        [
+          "Structure",
+          "Lignes dédiées / réseau partagé"
+        ],
+        [
+          "Exploitation",
+          "Connectée / îlotée / transitions"
+        ],
+        [
+          "Représentation",
+          "Bilan agrégé / flux / dynamique"
+        ],
+        [
+          "Variations",
+          "Reconfiguration / panne de ligne"
+        ]
+      ],
+      "rels": [
+        [
+          "Contraint",
+          "actions"
+        ],
+        [
+          "Distinct du réseau de",
+          "communication"
+        ]
+      ],
+      "refs": [
+        [
+          "zhou",
+          "Topologie électrique : variable de décision."
+        ]
+      ]
+    },
+    "resources": {
+      "name": "Ressources et usages",
+      "attrs": [
+        [
+          "Production",
+          "Pilotable / renouvelable"
+        ],
+        [
+          "Stockage",
+          "Individuel / mutualisé"
+        ],
+        [
+          "Usages",
+          "Critiques / flexibles"
+        ],
+        [
+          "Perturbations",
+          "Production, demande, disponibilité"
+        ]
+      ],
+      "rels": [
+        [
+          "Déterminent les possibilités d’",
+          "actions"
+        ],
+        [
+          "Évoluent sur plusieurs horizons de",
+          "time"
+        ]
+      ],
+      "refs": [
+        [
+          "parisio",
+          "Ressources partagées, chauffage et charges flexibles."
+        ]
+      ]
+    },
+    "actors": {
+      "name": "Acteurs et gouvernance",
+      "attrs": [
+        [
+          "Propriété",
+          "Unique / multiple"
+        ],
+        [
+          "Autonomie",
+          "Délégation / veto / participation libre"
+        ],
+        [
+          "Autorité",
+          "Centrale / hiérarchique / entre pairs"
+        ],
+        [
+          "Comportement",
+          "Coopératif / stratégique"
+        ]
+      ],
+      "rels": [
+        [
+          "Délèguent ou organisent le",
+          "computation"
+        ],
+        [
+          "Expriment les",
+          "criteria"
+        ],
+        [
+          "Définissent le partage d’",
+          "information"
+        ]
+      ],
+      "refs": [
+        [
+          "guo",
+          "Calculs locaux et agent coordinateur ; autonomie stratégique à examiner."
+        ]
+      ]
+    },
+    "actions": {
+      "name": "Actions et engagements",
+      "attrs": [
+        [
+          "Physiques",
+          "Produire, stocker, décaler, délester"
+        ],
+        [
+          "Économiques",
+          "Échanger, tarifer, compenser"
+        ],
+        [
+          "Organisationnelles",
+          "Choisir des partenaires, mutualiser"
+        ],
+        [
+          "Engagements",
+          "Révisables / confirmés / exécutés"
+        ]
+      ],
+      "rels": [
+        [
+          "Sont contraintes par le",
+          "physical"
+        ],
+        [
+          "Ont des échéances et durées :",
+          "time"
+        ],
+        [
+          "Sont évaluées selon les",
+          "criteria"
+        ]
+      ],
+      "refs": [
+        [
+          "parisio",
+          "Coordination des ressources et charges."
+        ],
+        [
+          "zhou",
+          "Reconfiguration et répartition du délestage."
+        ]
+      ]
+    },
+    "time": {
+      "name": "Temporalité",
+      "attrs": [
+        [
+          "Horizon",
+          "Durée anticipée"
+        ],
+        [
+          "Résolution",
+          "Pas du planning"
+        ],
+        [
+          "Révision",
+          "Périodique / événementielle"
+        ],
+        [
+          "Échéance et durée",
+          "Délai de décision / validité de l’accord"
+        ]
+      ],
+      "rels": [
+        [
+          "Détermine la tolérance aux délais de",
+          "communication"
+        ],
+        [
+          "Conditionne la validité de l’",
+          "information"
+        ],
+        [
+          "Structure les",
+          "actions"
+        ]
+      ],
+      "refs": [
+        [
+          "zhou",
+          "Horizon glissant ; équité sur les délestages successifs."
+        ]
+      ]
+    },
+    "criteria": {
+      "name": "Objectifs et contraintes",
+      "attrs": [
+        [
+          "Objectifs",
+          "Coût, confort, émissions, résilience"
+        ],
+        [
+          "Équité",
+          "Entre acteurs / dans le temps"
+        ],
+        [
+          "Contraintes",
+          "Physiques / contractuelles / locales"
+        ],
+        [
+          "Compromis",
+          "Pondération / priorités / seuils"
+        ]
+      ],
+      "rels": [
+        [
+          "Expriment les préférences des",
+          "actors"
+        ],
+        [
+          "Évaluent les",
+          "actions"
+        ],
+        [
+          "Définissent les propriétés visées :",
+          "guarantees"
+        ]
+      ],
+      "refs": [
+        [
+          "parisio",
+          "Coûts, ressources partagées et bénéfice de coopération."
+        ],
+        [
+          "zhou",
+          "Contraintes d’équité temporelle du délestage."
+        ]
+      ]
+    },
+    "information": {
+      "name": "Information disponible",
+      "attrs": [
+        [
+          "Contenu",
+          "Mesures, prévisions, intentions, accords"
+        ],
+        [
+          "Accès",
+          "Local / partagé / privé"
+        ],
+        [
+          "Qualité",
+          "Exact / bruité / ancien / absent"
+        ],
+        [
+          "Connaissance",
+          "Commune / différente selon l’acteur"
+        ]
+      ],
+      "rels": [
+        [
+          "Dépend des",
+          "communication"
+        ],
+        [
+          "Alimente le",
+          "computation"
+        ],
+        [
+          "Porte notamment sur les",
+          "actions"
+        ]
+      ],
+      "refs": [
+        [
+          "alghamdi",
+          "Ancienneté des valeurs et des contrats suivie."
+        ],
+        [
+          "guo",
+          "Échanges d’estimations locales avec le coordinateur."
+        ]
+      ]
+    },
+    "communication": {
+      "name": "Communications",
+      "attrs": [
+        [
+          "Structure",
+          "Centralisée / maillée / variable"
+        ],
+        [
+          "Livraison",
+          "Délais / pertes / ordre / acquittement"
+        ],
+        [
+          "Pannes",
+          "Isolées / rafales / partitions"
+        ],
+        [
+          "Hypothèses",
+          "Bornes / reconnexion / corrélations"
+        ]
+      ],
+      "rels": [
+        [
+          "Modifient l’",
+          "information"
+        ],
+        [
+          "Sont jugées au regard de la",
+          "time"
+        ],
+        [
+          "Contraignent le protocole de",
+          "computation"
+        ],
+        [
+          "Conditionnent certaines",
+          "guarantees"
+        ]
+      ],
+      "refs": [
+        [
+          "alghamdi",
+          "Pertes de messages et coupures en rafales étudiées."
+        ]
+      ]
+    },
+    "computation": {
+      "name": "Calcul et protocole",
+      "attrs": [
+        [
+          "Calcul",
+          "Central / distribué / hiérarchique"
+        ],
+        [
+          "Synchronisation",
+          "Synchrone / asynchrone"
+        ],
+        [
+          "Mécanisme",
+          "Optimisation / négociation / apprentissage"
+        ],
+        [
+          "Accord et repli",
+          "Validation / exécution / reprise"
+        ]
+      ],
+      "rels": [
+        [
+          "Est organisé par les",
+          "actors"
+        ],
+        [
+          "Utilise l’",
+          "information"
+        ],
+        [
+          "Échange via les",
+          "communication"
+        ],
+        [
+          "Cherche à établir des",
+          "guarantees"
+        ]
+      ],
+      "refs": [
+        [
+          "guo",
+          "Optimisations locales et coordination globale."
+        ],
+        [
+          "alghamdi",
+          "ADMM, contrats réciproques et réparation locale."
+        ]
+      ]
+    },
+    "guarantees": {
+      "name": "Propriétés et conditions",
+      "attrs": [
+        [
+          "Physiques",
+          "Faisabilité / stabilité électrique"
+        ],
+        [
+          "Décisionnelles",
+          "Optimalité / délai / convergence"
+        ],
+        [
+          "Collectives",
+          "Équité / participation / cohérence"
+        ],
+        [
+          "Portée",
+          "Modèle + hypothèses + régime"
+        ]
+      ],
+      "rels": [
+        [
+          "Sont établies pour un",
+          "computation"
+        ],
+        [
+          "Peuvent dépendre des",
+          "communication"
+        ],
+        [
+          "Sont étayées par l’",
+          "evaluation"
+        ]
+      ],
+      "refs": [
+        [
+          "alghamdi",
+          "Faisabilité conditionnée à des écarts bornés et des réserves suffisantes."
+        ]
+      ]
+    },
+    "evaluation": {
+      "name": "Preuves et expériences",
+      "attrs": [
+        [
+          "Preuves",
+          "Théorèmes et hypothèses"
+        ],
+        [
+          "Essais",
+          "Simulation / cosimulation / matériel"
+        ],
+        [
+          "Scénarios",
+          "Échelle, pannes, références comparées"
+        ],
+        [
+          "Traçabilité",
+          "Section, équation, données, code"
+        ]
+      ],
+      "rels": [
+        [
+          "Étayent les",
+          "guarantees"
+        ],
+        [
+          "Testent des régimes de",
+          "communication"
+        ],
+        [
+          "Mesurent les",
+          "criteria"
+        ]
+      ],
+      "refs": [
+        [
+          "alghamdi",
+          "Cinq microgrids ; résultats conditionnels, pas de supériorité uniforme."
+        ],
+        [
+          "zhou",
+          "Cas IEEE 13-bus modifié et SMART-DS."
+        ]
+      ]
+    }
+  },
+  "version": 1,
+  "updated": "2026-09-23"
+}
