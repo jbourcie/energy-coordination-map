@@ -98,6 +98,97 @@
           "zhou",
           "Topologie électrique : variable de décision."
         ]
+      ],
+      "explanations": [
+        {
+          "attribute": "Structure",
+          "question": "Par quelles infrastructures l’électricité circule-t-elle ?",
+          "combination": "Ces deux structures peuvent coexister dans un même cluster.",
+          "implication": "La topologie détermine quels échanges sont physiquement possibles et quelles limites de ligne doivent être respectées.",
+          "options": [
+            {
+              "label": "Lignes dédiées",
+              "definition": "Des liaisons électriques relient spécifiquement les sites considérés. Un échange utilise une infrastructure identifiée.",
+              "example": "Deux microgrids sont reliés par un câble dont la puissance admissible est limitée."
+            },
+            {
+              "label": "Réseau partagé",
+              "definition": "Les participants utilisent une infrastructure qui dessert aussi d’autres usagers. Un échange comptable ne définit pas à lui seul le trajet physique de l’électricité.",
+              "example": "Des bâtiments échangent de l’énergie contractuellement tout en restant raccordés au réseau public."
+            }
+          ]
+        },
+        {
+          "attribute": "Exploitation",
+          "question": "Le système peut-il échanger avec le réseau amont ?",
+          "combination": "Connecté et îloté sont des modes distincts pour une même frontière électrique à un instant donné ; un scénario peut inclure les deux et leur transition.",
+          "implication": "En îlotage, il faut équilibrer localement production et demande. Étudier le passage entre modes ajoute des décisions et des contraintes.",
+          "options": [
+            {
+              "label": "Connectée",
+              "definition": "Le système reste relié au réseau amont et peut importer ou exporter dans les limites autorisées.",
+              "example": "Acheter de l’électricité au réseau lorsque le solaire et la batterie ne suffisent pas."
+            },
+            {
+              "label": "Îlotée",
+              "definition": "Le système fonctionne sans liaison électrique active avec le réseau amont. Ses ressources doivent assurer les services étudiés.",
+              "example": "Après une coupure, une batterie et un groupe alimentent les charges prioritaires."
+            },
+            {
+              "label": "Transitions",
+              "definition": "On étudie aussi la déconnexion, la préparation à l’îlotage ou la reconnexion.",
+              "example": "Conserver une réserve avant une coupure annoncée, puis organiser la reconnexion."
+            }
+          ]
+        },
+        {
+          "attribute": "Représentation",
+          "question": "Quel niveau de détail physique le modèle représente-t-il ?",
+          "combination": "Ce sont des niveaux de description souvent combinés : une planification agrégée peut être vérifiée par un modèle électrique plus détaillé.",
+          "implication": "Une solution faisable dans un bilan énergétique peut violer une limite de tension ou de ligne ignorée par ce bilan.",
+          "options": [
+            {
+              "label": "Bilan agrégé",
+              "definition": "On représente principalement les quantités produites, consommées, stockées et échangées, sans résoudre les flux internes détaillés.",
+              "example": "Sur une heure, la production et les imports doivent couvrir consommation, charge des batteries et pertes modélisées."
+            },
+            {
+              "label": "Flux de puissance",
+              "definition": "On calcule la répartition des puissances dans les lignes et, selon le modèle retenu, les tensions et les pertes.",
+              "example": "Vérifier qu’un échange entre deux sites ne surcharge pas un transformateur."
+            },
+            {
+              "label": "Dynamique",
+              "definition": "On représente l’évolution temporelle des états électriques, au-delà d’une succession de points d’équilibre.",
+              "example": "Étudier l’évolution de la fréquence après la perte d’un générateur."
+            }
+          ]
+        },
+        {
+          "attribute": "Variations",
+          "question": "La structure électrique peut-elle changer ?",
+          "combination": "Une reconfiguration est une action ; une panne est une perturbation. Elles peuvent apparaître ensemble.",
+          "implication": "Il faut distinguer ce que la décision contrôle de ce que le scénario impose.",
+          "options": [
+            {
+              "label": "Reconfiguration",
+              "definition": "La décision ouvre ou ferme certains organes de coupure pour changer les connexions électriques.",
+              "example": "Raccorder un quartier à une autre alimentation disponible."
+            },
+            {
+              "label": "Panne de ligne",
+              "definition": "Une liaison devient indisponible sans que le décideur l’ait choisi.",
+              "example": "Un câble endommagé supprime temporairement un chemin d’échange."
+            }
+          ]
+        }
+      ],
+      "workedExample": "Exemple fictif : des bâtiments d’une communauté énergétique utilisent le réseau public pour l’électricité, un serveur pour leurs messages et des contrats pour le partage comptable. Le regroupement organisationnel ne crée pas automatiquement un microgrid capable de fonctionner en îlotage.",
+      "readingSources": [
+        {
+          "title": "DOE · Microgrid Systems (définition et modes de fonctionnement)",
+          "url": "https://www.energy.gov/oe/microgrid-systems"
+        }
       ]
     },
     "resources": {
@@ -135,6 +226,91 @@
           "parisio",
           "Ressources partagées, chauffage et charges flexibles."
         ]
+      ],
+      "explanations": [
+        {
+          "attribute": "Production",
+          "question": "Sur quels moyens de production peut-on agir ?",
+          "combination": "Pilotable et renouvelable ne sont pas opposés : certaines productions renouvelables sont pilotables. Disponibilité de la ressource et commandabilité doivent être décrites séparément.",
+          "implication": "Le planning doit distinguer la puissance commandable de la puissance seulement prévue ou limitée.",
+          "options": [
+            {
+              "label": "Pilotable",
+              "definition": "On peut commander la production dans certaines limites de puissance, de variation et de disponibilité.",
+              "example": "Augmenter la puissance d’un groupe, sous réserve de son temps de démarrage et du combustible disponible."
+            },
+            {
+              "label": "Renouvelable",
+              "definition": "La source se renouvelle naturellement ; cela ne précise pas à lui seul son degré de pilotage. Le solaire et l’éolien dépendent notamment de la météo.",
+              "example": "La production photovoltaïque varie avec l’ensoleillement ; on peut parfois la réduire, mais pas imposer une production supérieure au potentiel disponible."
+            }
+          ]
+        },
+        {
+          "attribute": "Stockage",
+          "question": "Qui dispose du stockage ?",
+          "combination": "Stockages individuels et mutualisés peuvent coexister ; usage partagé et propriété partagée sont deux questions différentes.",
+          "implication": "Un stockage partagé crée un problème d’allocation de sa capacité, de ses coûts et de ses réserves.",
+          "options": [
+            {
+              "label": "Individuel",
+              "definition": "Une ressource de stockage est affectée à un acteur ou à un site, qui en détermine les usages selon les règles retenues.",
+              "example": "Chaque foyer gère sa batterie et négocie uniquement ses échanges externes."
+            },
+            {
+              "label": "Mutualisé",
+              "definition": "Plusieurs acteurs peuvent bénéficier d’une même ressource de stockage selon une règle d’accès.",
+              "example": "Une batterie de quartier réserve une part de capacité pour chaque participant."
+            }
+          ]
+        },
+        {
+          "attribute": "Usages",
+          "question": "Quels besoins peuvent être déplacés ou réduits ?",
+          "combination": "Les catégories peuvent se recouvrir : un service critique peut disposer d’une marge de flexibilité limitée. La priorité et la flexibilité sont à préciser séparément.",
+          "implication": "La flexibilité fournit des actions possibles ; la criticité détermine les limites et les priorités de service.",
+          "options": [
+            {
+              "label": "Critiques",
+              "definition": "La continuité du service est prioritaire, avec une interruption interdite ou fortement pénalisée dans le modèle.",
+              "example": "Maintenir l’alimentation des équipements indispensables d’un centre de soins."
+            },
+            {
+              "label": "Flexibles",
+              "definition": "Une partie de la consommation peut changer d’heure, de puissance ou de niveau de service dans des limites acceptables.",
+              "example": "Décaler la recharge d’un véhicule tout en garantissant la charge demandée avant le départ."
+            }
+          ]
+        },
+        {
+          "attribute": "Perturbations",
+          "question": "Qu’est-ce qui peut s’écarter des prévisions ?",
+          "combination": "Ces perturbations peuvent se cumuler et être corrélées.",
+          "implication": "Le modèle doit indiquer les incertitudes prises en compte et les marges ou actions de recours disponibles.",
+          "options": [
+            {
+              "label": "Production",
+              "definition": "La production réelle diffère de celle anticipée.",
+              "example": "Des nuages réduisent la production solaire plus tôt que prévu."
+            },
+            {
+              "label": "Demande",
+              "definition": "La consommation réelle diffère de la prévision.",
+              "example": "Un bâtiment prolonge exceptionnellement son activité en soirée."
+            },
+            {
+              "label": "Disponibilité",
+              "definition": "Une ressource devient inutilisable ou sa capacité accessible change.",
+              "example": "Une batterie est en maintenance ou un véhicule quitte le site plus tôt."
+            }
+          ]
+        }
+      ],
+      "readingSources": [
+        {
+          "title": "DOE · Distributed Energy Resources and Microgrids Basics",
+          "url": "https://www.energy.gov/cmei/systems/solar-integration-distributed-energy-resources-and-microgrids-basics"
+        }
       ]
     },
     "actors": {
@@ -176,6 +352,90 @@
           "guo",
           "Calculs locaux et agent coordinateur ; autonomie stratégique à examiner."
         ]
+      ],
+      "explanations": [
+        {
+          "attribute": "Propriété",
+          "question": "À qui appartiennent les ressources ?",
+          "combination": "Ce choix se lit à l’échelle du périmètre étudié ; il ne fixe pas automatiquement l’architecture de calcul.",
+          "implication": "Plusieurs propriétaires peuvent avoir des intérêts distincts, mais un propriétaire unique peut aussi déléguer les décisions à plusieurs agents.",
+          "options": [
+            {
+              "label": "Propriété unique",
+              "definition": "Les ressources du périmètre appartiennent à une même entité.",
+              "example": "Une université possède plusieurs bâtiments et leurs batteries."
+            },
+            {
+              "label": "Propriété multiple",
+              "definition": "Les ressources appartiennent à plusieurs entités distinctes.",
+              "example": "Des foyers, une entreprise et une collectivité partagent de l’énergie."
+            }
+          ]
+        },
+        {
+          "attribute": "Autonomie",
+          "question": "Quelle liberté chaque participant conserve-t-il ?",
+          "combination": "Ces droits se combinent et doivent être explicités par type de décision.",
+          "implication": "Un planning techniquement réalisable peut être inexécutable si un acteur est autorisé à refuser ce qu’il prévoit.",
+          "options": [
+            {
+              "label": "Délégation",
+              "definition": "Un acteur autorise une autre entité à prendre certaines décisions à sa place, dans un périmètre défini.",
+              "example": "Un agrégateur pilote la recharge dans la plage acceptée par le propriétaire."
+            },
+            {
+              "label": "Veto",
+              "definition": "Un acteur peut refuser certaines propositions, même si elles améliorent l’objectif collectif.",
+              "example": "Un bâtiment refuse une baisse de température au-delà de son seuil de confort."
+            },
+            {
+              "label": "Participation libre",
+              "definition": "L’acteur peut choisir de rejoindre ou quitter un dispositif, selon des conditions à préciser.",
+              "example": "Un foyer adhère au partage pour le lendemain puis choisit de ne pas participer la semaine suivante."
+            }
+          ]
+        },
+        {
+          "attribute": "Autorité",
+          "question": "Qui a le pouvoir de valider les décisions collectives ?",
+          "combination": "Les formes peuvent être hybrides ; cette dimension concerne l’autorité, pas l’emplacement des calculs.",
+          "implication": "Calculer une proposition de manière distribuée ne signifie pas que tous ont le même pouvoir de décision.",
+          "options": [
+            {
+              "label": "Autorité centrale",
+              "definition": "Une entité possède le pouvoir de trancher pour le périmètre délégué.",
+              "example": "Un opérateur valide le planning commun après avoir reçu les propositions locales."
+            },
+            {
+              "label": "Autorité hiérarchique",
+              "definition": "Les responsabilités sont réparties entre plusieurs niveaux de décision.",
+              "example": "Les bâtiments arbitrent leurs usages, puis un coordinateur arbitre la puissance du quartier."
+            },
+            {
+              "label": "Entre pairs",
+              "definition": "Les participants concluent leurs accords sans autorité supérieure chargée de trancher ces accords.",
+              "example": "Deux microgrids valident réciproquement un échange selon un protocole commun."
+            }
+          ]
+        },
+        {
+          "attribute": "Comportement",
+          "question": "Comment modélise-t-on les intérêts des participants ?",
+          "combination": "Il s’agit d’hypothèses de comportement, qui peuvent varier selon l’acteur ou la phase.",
+          "implication": "Des agents poursuivant leurs intérêts propres peuvent nécessiter des mécanismes d’incitation ou de vérification supplémentaires.",
+          "options": [
+            {
+              "label": "Coopératif",
+              "definition": "Les agents suivent le mécanisme prévu pour poursuivre un objectif collectif ou une coopération convenue.",
+              "example": "Chaque site communique les informations attendues pour réduire le coût total."
+            },
+            {
+              "label": "Stratégique",
+              "definition": "Chaque acteur adapte ses déclarations ou ses décisions en fonction de son propre intérêt et du comportement des autres.",
+              "example": "Un vendeur choisit son prix pour augmenter son bénéfice, même si cela réduit le gain collectif."
+            }
+          ]
+        }
       ]
     },
     "actions": {
@@ -221,6 +481,100 @@
           "zhou",
           "Reconfiguration et répartition du délestage."
         ]
+      ],
+      "explanations": [
+        {
+          "attribute": "Physiques",
+          "question": "Quelles grandeurs physiques la décision peut-elle modifier ?",
+          "combination": "Ces actions sont combinables ; seules celles réellement commandables doivent être des variables de décision.",
+          "implication": "Le choix des actions détermine la flexibilité disponible et les conséquences sur le service rendu.",
+          "options": [
+            {
+              "label": "Produire",
+              "definition": "Choisir une puissance de production ou le démarrage d’un équipement.",
+              "example": "Allumer un groupe avant une période de forte demande."
+            },
+            {
+              "label": "Stocker",
+              "definition": "Choisir quand charger ou décharger et quelle réserve conserver.",
+              "example": "Charger à midi pour alimenter le site en soirée."
+            },
+            {
+              "label": "Décaler",
+              "definition": "Déplacer un usage dans le temps, sans nécessairement supprimer son besoin énergétique.",
+              "example": "Reporter un cycle de lavage à une période moins chère."
+            },
+            {
+              "label": "Délester",
+              "definition": "Interrompre ou réduire une charge pour faire face à une contrainte ; le service perdu peut ne pas être récupéré.",
+              "example": "Couper temporairement un usage non prioritaire pendant une pénurie."
+            }
+          ]
+        },
+        {
+          "attribute": "Économiques",
+          "question": "Quelles règles économiques peut-on décider ?",
+          "combination": "Ces actions peuvent accompagner les décisions physiques. Un prix n’est pas une décision si l’article le prend comme une donnée imposée.",
+          "implication": "Il faut distinguer organiser des flux, fixer leur rémunération et redistribuer les bénéfices.",
+          "options": [
+            {
+              "label": "Échanger",
+              "definition": "Déterminer une quantité achetée, vendue ou partagée entre acteurs et son créneau.",
+              "example": "Prévoir la vente de 10 kWh au site voisin pour le lendemain."
+            },
+            {
+              "label": "Tarifer",
+              "definition": "Fixer ou adapter le prix d’un service ou d’un échange.",
+              "example": "Proposer un tarif favorisant le déplacement de consommation vers midi."
+            },
+            {
+              "label": "Compenser",
+              "definition": "Attribuer un paiement ou un avantage pour redistribuer un coût, un bénéfice ou un effort.",
+              "example": "Indemniser un participant qui accepte plus de délestage que les autres."
+            }
+          ]
+        },
+        {
+          "attribute": "Organisationnelles",
+          "question": "Peut-on modifier l’organisation de la coopération ?",
+          "combination": "Ces décisions se combinent et évoluent souvent moins fréquemment que les consignes de puissance.",
+          "implication": "Elles changent les partenaires, les règles ou le périmètre des ressources accessibles.",
+          "options": [
+            {
+              "label": "Choisir des partenaires",
+              "definition": "Décider avec quels acteurs conclure des accords ou former un groupe.",
+              "example": "Un microgrid choisit deux partenaires de secours pour une période à risque."
+            },
+            {
+              "label": "Mutualiser",
+              "definition": "Décider de partager l’usage d’une ressource ou d’un service et d’en définir l’accès.",
+              "example": "Plusieurs sites réservent collectivement une capacité de secours."
+            }
+          ]
+        },
+        {
+          "attribute": "Engagements",
+          "question": "À quel stade se trouve une décision ou un accord ?",
+          "combination": "Ce sont des états dans un cycle de vie. Un accord confirmé peut encore être révisable si une procédure l’autorise.",
+          "implication": "La coordination doit éviter qu’une proposition provisoire soit traitée par un voisin comme un engagement ferme.",
+          "options": [
+            {
+              "label": "Révisable",
+              "definition": "La décision peut encore être modifiée selon des règles connues.",
+              "example": "Un planning pour demain est recalculé après une nouvelle prévision météo."
+            },
+            {
+              "label": "Confirmé",
+              "definition": "Les parties requises ont accepté une version identifiée de l’accord. Il faut préciser ce qu’elles peuvent encore modifier.",
+              "example": "Deux sites confirment la même quantité, le même créneau et la même version d’un échange."
+            },
+            {
+              "label": "Exécuté",
+              "definition": "L’action a effectivement eu lieu ; sa réalisation peut différer de ce qui était prévu.",
+              "example": "Le compteur mesure l’énergie effectivement livrée pendant le créneau."
+            }
+          ]
+        }
       ]
     },
     "time": {
@@ -262,6 +616,101 @@
           "zhou",
           "Horizon glissant ; équité sur les délestages successifs."
         ]
+      ],
+      "explanations": [
+        {
+          "attribute": "Horizon",
+          "question": "Jusqu’où la décision anticipe-t-elle ?",
+          "combination": "Ces durées sont des exemples, pas des classes universelles. Plusieurs horizons peuvent être imbriqués.",
+          "implication": "Un horizon court peut ignorer une conséquence future ; un horizon long demande davantage de prévisions et de calcul.",
+          "options": [
+            {
+              "label": "Court horizon",
+              "definition": "On anticipe les prochaines minutes ou heures selon le service étudié.",
+              "example": "Ajuster les échanges pour les deux prochaines heures."
+            },
+            {
+              "label": "Journalier ou pluri-journalier",
+              "definition": "On planifie une journée ou plusieurs jours de fonctionnement.",
+              "example": "Réserver de l’énergie aujourd’hui pour une coupure prévue demain."
+            },
+            {
+              "label": "Saisonnier ou pluriannuel",
+              "definition": "On traite des engagements durables, des capacités ou des investissements.",
+              "example": "Dimensionner un stockage pour plusieurs années d’usage."
+            }
+          ]
+        },
+        {
+          "attribute": "Résolution",
+          "question": "Quelle est la durée d’un pas du planning ?",
+          "combination": "La résolution est distincte de l’horizon et de la fréquence de recalcul. Les pas peuvent aussi être variables.",
+          "implication": "Un pas plus fin révèle davantage de variations mais augmente généralement la taille du problème.",
+          "options": [
+            {
+              "label": "Pas fin",
+              "definition": "Chaque décision représente une courte tranche de temps relativement aux phénomènes étudiés.",
+              "example": "Un planning de 24 h en pas de 15 min contient 96 créneaux."
+            },
+            {
+              "label": "Pas grossier",
+              "definition": "Chaque décision agrège une période plus longue.",
+              "example": "Un planning de 24 h avec un pas horaire contient 24 créneaux et masque les variations internes à l’heure."
+            },
+            {
+              "label": "Pas variable",
+              "definition": "Le proche avenir est représenté finement et les périodes plus lointaines plus grossièrement.",
+              "example": "Prévoir des pas de 15 min pour les deux prochaines heures, puis des pas horaires."
+            }
+          ]
+        },
+        {
+          "attribute": "Révision",
+          "question": "Quand prend-on une nouvelle décision ?",
+          "combination": "Révision périodique et événementielle peuvent être combinées.",
+          "implication": "Recalculer souvent exige des informations et des communications disponibles assez fréquemment ; une révision par événement exige un critère de déclenchement.",
+          "options": [
+            {
+              "label": "Périodique",
+              "definition": "La décision est révisée à intervalles fixés à l’avance.",
+              "example": "Recalculer chaque heure un planning couvrant les prochaines 24 h."
+            },
+            {
+              "label": "Événementielle",
+              "definition": "La décision est révisée lorsqu’une condition définie se produit.",
+              "example": "Recalculer après la perte d’une liaison ou lorsque l’erreur de prévision dépasse un seuil."
+            }
+          ]
+        },
+        {
+          "attribute": "Échéance et durée",
+          "question": "Quand faut-il décider, et combien de temps la décision vaut-elle ?",
+          "combination": "Échéance de calcul et durée de validité sont deux paramètres indépendants à documenter.",
+          "implication": "Un résultat trop tardif peut être inutilisable, même s’il est optimal. Un accord périmé ne doit pas être exécuté comme un accord courant.",
+          "options": [
+            {
+              "label": "Échéance",
+              "definition": "Instant limite auquel une décision exploitable doit être disponible.",
+              "example": "Le planning de demain doit être confirmé avant 16 h aujourd’hui."
+            },
+            {
+              "label": "Durée de validité",
+              "definition": "Intervalle pendant lequel une consigne ou un accord s’applique, sauf révision autorisée.",
+              "example": "Un accord confirmé aujourd’hui couvre le créneau de demain entre 18 h et 19 h."
+            }
+          ]
+        }
+      ],
+      "workedExample": "Exemple fictif : à 8 h, un groupe prépare les prochaines 24 h en pas de 15 min. Il recalcule chaque heure, doit confirmer avant 8 h 05, et engage ses échanges pour le créneau 9 h–10 h. Horizon : 24 h ; résolution : 15 min ; révision : 1 h ; échéance : 8 h 05 ; validité de l’accord : 9 h–10 h. Un horizon glissant, dont le MPC est une utilisation, n’impose pas à lui seul une échelle de quelques millisecondes.",
+      "readingSources": [
+        {
+          "title": "MathWorks · Choose Sample Time and Horizons",
+          "url": "https://www.mathworks.com/help/mpc/ug/choosing-sample-time-and-horizons.html"
+        },
+        {
+          "title": "MathWorks · What Is Model Predictive Control?",
+          "url": "https://www.mathworks.com/help/mpc/gs/what-is-mpc.html"
+        }
       ]
     },
     "criteria": {
@@ -307,6 +756,100 @@
           "zhou",
           "Contraintes d’équité temporelle du délestage."
         ]
+      ],
+      "explanations": [
+        {
+          "attribute": "Objectifs",
+          "question": "Selon quels critères préfère-t-on une solution ?",
+          "combination": "Plusieurs objectifs peuvent coexister et entrer en conflit. Leur métrique et leur périmètre doivent être précisés.",
+          "implication": "On ne peut comparer deux méthodes sans savoir ce qu’elles optimisent et à quelles contraintes elles sont soumises.",
+          "options": [
+            {
+              "label": "Coût",
+              "definition": "Réduire une dépense définie : achats, fonctionnement, vieillissement ou paiements selon le modèle.",
+              "example": "Réduire la facture collective sur une journée."
+            },
+            {
+              "label": "Confort",
+              "definition": "Préserver la qualité d’usage selon une métrique explicite.",
+              "example": "Limiter l’écart entre température souhaitée et température réelle."
+            },
+            {
+              "label": "Émissions",
+              "definition": "Réduire une quantité d’émissions calculée sur un périmètre défini.",
+              "example": "Choisir les créneaux de consommation selon des facteurs d’émission explicités."
+            },
+            {
+              "label": "Résilience",
+              "definition": "Maintenir ou restaurer les services face à des perturbations définies.",
+              "example": "Réduire l’énergie non servie aux charges prioritaires pendant une coupure."
+            }
+          ]
+        },
+        {
+          "attribute": "Équité",
+          "question": "Comment répartir les bénéfices et les efforts ?",
+          "combination": "Équité entre acteurs et équité dans le temps peuvent être combinées ; équité ne signifie pas nécessairement égalité.",
+          "implication": "La règle doit préciser qui est comparé, ce qui est réparti et quels besoins ou contributions justifient des différences.",
+          "options": [
+            {
+              "label": "Entre acteurs",
+              "definition": "Comparer la répartition à une période donnée, par exemple selon les besoins, les contributions ou une référence individuelle.",
+              "example": "Limiter l’écart de pourcentage de charge délestée entre sites comparables."
+            },
+            {
+              "label": "Dans le temps",
+              "definition": "Tenir compte des avantages ou efforts cumulés sur plusieurs décisions.",
+              "example": "Éviter que le même quartier subisse systématiquement les coupures du soir."
+            }
+          ]
+        },
+        {
+          "attribute": "Contraintes",
+          "question": "Quelles limites une solution doit-elle respecter ?",
+          "combination": "Les trois familles se cumulent. Il faut distinguer les contraintes strictes des écarts autorisés contre pénalité.",
+          "implication": "Une contrainte définit ce qui est acceptable, et non simplement ce qui est préférable.",
+          "options": [
+            {
+              "label": "Physiques",
+              "definition": "Limites des équipements et lois retenues dans le modèle électrique.",
+              "example": "Ne pas dépasser la puissance d’une ligne ou la capacité d’une batterie."
+            },
+            {
+              "label": "Contractuelles",
+              "definition": "Obligations convenues entre parties.",
+              "example": "Livrer une quantité convenue sur un créneau, avec la tolérance spécifiée."
+            },
+            {
+              "label": "Locales",
+              "definition": "Limites propres à un participant ou à son usage ; elles peuvent aussi être physiques ou contractuelles.",
+              "example": "Garantir qu’un véhicule sera chargé avant l’heure de départ."
+            }
+          ]
+        },
+        {
+          "attribute": "Compromis",
+          "question": "Comment arbitrer entre plusieurs critères ?",
+          "combination": "Ces mécanismes sont des alternatives de formulation, parfois combinées. Une pondération ne définit pas automatiquement une politique d’équité.",
+          "implication": "L’arbitrage peut changer le classement des solutions sans changer leur faisabilité physique.",
+          "options": [
+            {
+              "label": "Pondération",
+              "definition": "Combiner plusieurs critères au moyen de poids et d’échelles explicités.",
+              "example": "Minimiser une somme du coût et d’une pénalité d’inconfort."
+            },
+            {
+              "label": "Priorités",
+              "definition": "Traiter les critères dans un ordre, avec une règle précisant si un objectif prioritaire peut être dégradé.",
+              "example": "Satisfaire d’abord les charges critiques, puis réduire le coût parmi les solutions admissibles."
+            },
+            {
+              "label": "Seuils",
+              "definition": "Optimiser un critère tout en imposant des bornes sur les autres.",
+              "example": "Minimiser le coût sous une limite de durée d’interruption par foyer."
+            }
+          ]
+        }
       ]
     },
     "information": {
@@ -352,6 +895,105 @@
           "guo",
           "Échanges d’estimations locales avec le coordinateur."
         ]
+      ],
+      "explanations": [
+        {
+          "attribute": "Contenu",
+          "question": "Que représentent les données échangées ou utilisées ?",
+          "combination": "Les contenus se complètent et n’ont pas le même statut : une intention n’est pas un engagement.",
+          "implication": "Le protocole doit indiquer quelles données sont nécessaires et distinguer observations, anticipations et accords.",
+          "options": [
+            {
+              "label": "Mesures",
+              "definition": "Observations du système à un instant ou sur une période donnée.",
+              "example": "Puissance consommée ou état de charge mesuré."
+            },
+            {
+              "label": "Prévisions",
+              "definition": "Estimations de grandeurs futures, sujettes à erreur.",
+              "example": "Production solaire prévue pour demain."
+            },
+            {
+              "label": "Intentions",
+              "definition": "Actions envisagées mais pas nécessairement acceptées ou garanties.",
+              "example": "Un voisin propose d’exporter une certaine puissance à 18 h."
+            },
+            {
+              "label": "Accords",
+              "definition": "Décisions acceptées selon une procédure et identifiées par leurs parties, leur contenu et leur validité.",
+              "example": "Un contrat d’échange confirmé par les deux sites."
+            }
+          ]
+        },
+        {
+          "attribute": "Accès",
+          "question": "Qui peut accéder à quelle information ?",
+          "combination": "Ces modalités se définissent donnée par donnée. Un acteur peut garder ses préférences privées tout en partageant un agrégat.",
+          "implication": "On ne doit pas attribuer à l’algorithme une information globale qui n’est accessible à aucun acteur.",
+          "options": [
+            {
+              "label": "Local",
+              "definition": "L’information est disponible chez l’acteur qui l’observe ou la produit ; elle n’est pas nécessairement secrète.",
+              "example": "Un site connaît les mesures de ses propres capteurs."
+            },
+            {
+              "label": "Partagé",
+              "definition": "L’information est transmise à un groupe ou à un coordinateur déterminé.",
+              "example": "Chaque site communique son besoin net au coordinateur."
+            },
+            {
+              "label": "Privé",
+              "definition": "L’information n’est pas directement divulguée aux autres, selon une règle explicite. Cela ne garantit pas qu’elle soit impossible à inférer.",
+              "example": "Un foyer partage une plage de flexibilité mais garde sa préférence de confort confidentielle."
+            }
+          ]
+        },
+        {
+          "attribute": "Qualité",
+          "question": "Dans quel état se trouve l’information disponible ?",
+          "combination": "Ces qualités peuvent se combiner : une valeur peut être à la fois ancienne et bruitée.",
+          "implication": "La méthode doit traiter l’erreur, l’âge ou l’absence des données sans les confondre avec une valeur nulle.",
+          "options": [
+            {
+              "label": "Exact",
+              "definition": "Le modèle suppose une donnée sans erreur pour la grandeur et l’instant considérés.",
+              "example": "Utiliser la capacité nominale connue d’un équipement comme constante du modèle."
+            },
+            {
+              "label": "Bruité",
+              "definition": "La valeur est affectée d’une erreur de mesure ou d’estimation.",
+              "example": "Un capteur fournit une consommation avec une marge d’erreur."
+            },
+            {
+              "label": "Ancien",
+              "definition": "La donnée concerne un instant passé et peut ne plus décrire l’état actuel.",
+              "example": "La dernière disponibilité reçue d’un voisin date de trente minutes."
+            },
+            {
+              "label": "Absent",
+              "definition": "Aucune valeur utilisable n’est disponible au moment de décider.",
+              "example": "Un site n’a jamais reçu la proposition du partenaire pour le créneau demandé."
+            }
+          ]
+        },
+        {
+          "attribute": "Connaissance",
+          "question": "Les acteurs disposent-ils de la même vue de la situation ?",
+          "combination": "Une même valeur reçue par tous ne suffit pas, au sens formel, à établir une connaissance commune. Préciser le niveau d’accord sur l’information.",
+          "implication": "Des vues différentes peuvent conduire à exécuter des versions incompatibles d’un même accord.",
+          "options": [
+            {
+              "label": "Connaissance commune ou vue partagée",
+              "definition": "Dans un usage informel, les acteurs partagent une même information. Au sens formel, chacun sait aussi que les autres la savent, et ainsi de suite : c’est une hypothèse plus forte.",
+              "example": "Tous utilisent la même version publiée d’un planning ; préciser ce que chacun sait de sa réception par les autres."
+            },
+            {
+              "label": "Vues différentes selon l’acteur",
+              "definition": "Les acteurs peuvent connaître des valeurs ou des versions différentes au même instant.",
+              "example": "Un site a reçu l’annulation d’un échange, mais son partenaire utilise encore l’accord précédent."
+            }
+          ]
+        }
       ]
     },
     "communication": {
@@ -397,7 +1039,107 @@
           "alghamdi",
           "Pertes de messages et coupures en rafales étudiées."
         ]
-      ]
+      ],
+      "explanations": [
+        {
+          "attribute": "Structure",
+          "question": "Par quels chemins les messages passent-ils ?",
+          "combination": "Ces formes peuvent se combiner ; elles décrivent les communications, pas les connexions électriques ni l’autorité de décision.",
+          "implication": "La structure influence les dépendances à certains nœuds et les chemins disponibles après une panne.",
+          "options": [
+            {
+              "label": "Centralisée",
+              "definition": "Les échanges passent principalement par un point central.",
+              "example": "Chaque microgrid envoie sa proposition à un serveur coordinateur."
+            },
+            {
+              "label": "Maillée",
+              "definition": "Plusieurs liaisons relient les nœuds et peuvent offrir différents chemins. Maillé ne signifie pas que chacun parle directement à tous.",
+              "example": "Les voisins relaient des informations par plusieurs routes possibles."
+            },
+            {
+              "label": "Variable",
+              "definition": "Les connexions disponibles changent au cours du temps.",
+              "example": "Une liaison radio apparaît ou disparaît selon la couverture."
+            }
+          ]
+        },
+        {
+          "attribute": "Livraison",
+          "question": "Quelles propriétés de livraison suppose-t-on ?",
+          "combination": "Délais, pertes, ordre et acquittements sont quatre caractéristiques distinctes ; aucune ne déduit automatiquement les autres.",
+          "implication": "Les hypothèses de livraison déterminent si un acteur peut attendre, réessayer ou doit décider avec une information incomplète.",
+          "options": [
+            {
+              "label": "Délais",
+              "definition": "Le message arrive après un certain temps, fixe, variable, borné ou non selon le modèle.",
+              "example": "Une proposition arrive après l’heure à laquelle le destinataire devait décider."
+            },
+            {
+              "label": "Pertes",
+              "definition": "Certains messages ne sont pas livrés. Il faut préciser la probabilité, les corrélations ou les bornes supposées.",
+              "example": "Une mise à jour de quantité échangée n’atteint pas son destinataire."
+            },
+            {
+              "label": "Ordre",
+              "definition": "Le réseau peut préserver l’ordre d’envoi ou livrer des messages dans un ordre différent.",
+              "example": "La version 3 arrive avant la version 2 ; il faut éviter de revenir à une ancienne décision."
+            },
+            {
+              "label": "Acquittement",
+              "definition": "Un message de retour atteste une réception définie par le protocole ; cela ne prouve pas automatiquement l’acceptation ou l’exécution.",
+              "example": "Le partenaire confirme avoir reçu la version 3, puis l’accepte dans une étape distincte."
+            }
+          ]
+        },
+        {
+          "attribute": "Pannes",
+          "question": "Quelle forme prend une interruption de communication ?",
+          "combination": "Ces perturbations se décrivent par leur durée, leur étendue et leur fréquence. Une partition peut résulter de plusieurs pannes.",
+          "implication": "Un taux moyen de perte ne décrit pas à lui seul la difficulté : une longue coupure peut être plus pénalisante que des pertes dispersées.",
+          "options": [
+            {
+              "label": "Pertes isolées",
+              "definition": "Des messages manquent ponctuellement entre des échanges qui fonctionnent.",
+              "example": "Une proposition sur vingt n’est pas reçue, sans longue interruption."
+            },
+            {
+              "label": "Rafales",
+              "definition": "Plusieurs pertes se succèdent pendant une période.",
+              "example": "Aucun message ne passe pendant dix minutes sur une liaison."
+            },
+            {
+              "label": "Partitions",
+              "definition": "Le réseau se sépare en groupes qui ne peuvent plus communiquer entre eux pendant une période.",
+              "example": "Deux groupes de microgrids continuent chacun leurs échanges internes, sans pouvoir négocier entre groupes."
+            }
+          ]
+        },
+        {
+          "attribute": "Hypothèses",
+          "question": "Quelles restrictions impose-t-on aux perturbations ?",
+          "combination": "Ce sont des hypothèses à documenter, pas des garanties spontanées d’un réseau.",
+          "implication": "Une propriété démontrée sous délais bornés ne s’étend pas automatiquement à une coupure arbitrairement longue.",
+          "options": [
+            {
+              "label": "Bornes",
+              "definition": "On suppose une limite sur un délai, un nombre de pertes ou une durée d’indisponibilité.",
+              "example": "Supposer qu’un message frais arrive au moins une fois toutes les cinq minutes."
+            },
+            {
+              "label": "Reconnexion",
+              "definition": "On suppose que les communications seront rétablies, avec ou sans délai maximal.",
+              "example": "Les deux groupes finissent par se reconnecter ; le moment exact reste inconnu."
+            },
+            {
+              "label": "Corrélations",
+              "definition": "Les perturbations ne sont pas nécessairement indépendantes entre messages, liens ou infrastructures.",
+              "example": "Une tempête interrompt à la fois une alimentation électrique et plusieurs liaisons de communication."
+            }
+          ]
+        }
+      ],
+      "workedExample": "Exemple fictif : une coupure Internet empêche deux sites de renégocier, alors que leur liaison électrique fonctionne toujours. Une coupure électrique peut, inversement, survenir sans perte de communication. Les deux types de panne doivent être décrits séparément, puis éventuellement corrélés."
     },
     "computation": {
       "name": "Calcul et protocole",
@@ -446,6 +1188,102 @@
           "alghamdi",
           "ADMM, contrats réciproques et réparation locale."
         ]
+      ],
+      "explanations": [
+        {
+          "attribute": "Calcul",
+          "question": "Où le travail de décision est-il effectué ?",
+          "combination": "La terminologie varie selon les articles. Décrire les rôles et échanges réels plutôt que se fier au seul mot « distribué ».",
+          "implication": "Répartir le calcul ne supprime ni les dépendances de communication ni le besoin de cohérence entre décisions.",
+          "options": [
+            {
+              "label": "Central",
+              "definition": "Une entité résout le problème global à partir des informations reçues.",
+              "example": "Un serveur calcule les plannings de tous les microgrids."
+            },
+            {
+              "label": "Distribué",
+              "definition": "Plusieurs entités résolvent des parties du problème et échangent pour coordonner leurs résultats. Un coordinateur peut encore exister.",
+              "example": "Chaque site optimise son stockage et échange des variables de couplage avec ses voisins ou un coordinateur."
+            },
+            {
+              "label": "Hiérarchique",
+              "definition": "Plusieurs niveaux de calcul traitent des sous-problèmes ou horizons différents.",
+              "example": "Les sites calculent des options locales ; un niveau supérieur alloue une capacité commune."
+            }
+          ]
+        },
+        {
+          "attribute": "Synchronisation",
+          "question": "Les calculs doivent-ils avancer ensemble ?",
+          "combination": "Le synchronisme du protocole est distinct de la périodicité du planning ; une révision horaire peut contenir des calculs asynchrones.",
+          "implication": "Attendre tous les participants peut ralentir ou bloquer le calcul ; utiliser des valeurs anciennes exige des conditions de validité explicites.",
+          "options": [
+            {
+              "label": "Synchrone",
+              "definition": "Des barrières ou tours communs imposent d’attendre certains échanges avant de poursuivre.",
+              "example": "Chaque itération attend les nouvelles propositions de tous les sites requis."
+            },
+            {
+              "label": "Asynchrone",
+              "definition": "Les participants progressent sans barrière globale, selon leurs calculs et les messages reçus. Des bornes sur le retard peuvent néanmoins être supposées.",
+              "example": "Un site met à jour sa solution dès qu’il reçoit une nouvelle proposition d’un voisin."
+            }
+          ]
+        },
+        {
+          "attribute": "Mécanisme",
+          "question": "Quel mécanisme produit les décisions ?",
+          "combination": "Ces familles se combinent : un agent peut apprendre une prévision, optimiser un plan puis négocier un accord.",
+          "implication": "Il faut distinguer le problème optimisé, l’algorithme qui le résout et le protocole qui rend le résultat collectif.",
+          "options": [
+            {
+              "label": "Optimisation",
+              "definition": "Rechercher une décision améliorant un objectif sous des contraintes explicites.",
+              "example": "Minimiser le coût des échanges sous contraintes de batterie. ADMM est une famille de méthodes de décomposition ; ses garanties dépendent de la formulation et des hypothèses."
+            },
+            {
+              "label": "Négociation",
+              "definition": "Échanger des offres, contre-offres ou acceptations selon des règles définies.",
+              "example": "Deux sites ajustent quantité et prix jusqu’à accepter un échange."
+            },
+            {
+              "label": "Apprentissage",
+              "definition": "Estimer un modèle ou une politique à partir de données ou d’interactions.",
+              "example": "Apprendre une politique de stockage à partir d’épisodes de fonctionnement ; son comportement hors des situations apprises doit être évalué."
+            }
+          ]
+        },
+        {
+          "attribute": "Accord et repli",
+          "question": "Comment une proposition devient-elle une action fiable ?",
+          "combination": "Validation, exécution et reprise sont des étapes complémentaires ; leur absence dans un article doit être distinguée d’une impossibilité.",
+          "implication": "Un algorithme d’optimisation seul ne précise pas nécessairement ce qui est exécuté en cas de désaccord ou de perte de messages.",
+          "options": [
+            {
+              "label": "Validation",
+              "definition": "Vérifier puis accepter une version déterminée d’une décision avant son application.",
+              "example": "S’assurer que les partenaires ont accepté la même quantité et le même créneau."
+            },
+            {
+              "label": "Exécution",
+              "definition": "Traduire l’accord en consignes effectivement appliquées aux équipements.",
+              "example": "Déclencher la décharge convenue et suivre l’énergie livrée."
+            },
+            {
+              "label": "Reprise et repli",
+              "definition": "Prévoir une conduite temporaire en cas d’échec, puis la manière de rétablir la coordination.",
+              "example": "Passer à un planning local conservateur pendant la coupure, puis réconcilier les engagements à la reconnexion."
+            }
+          ]
+        }
+      ],
+      "workedExample": "Exemple fictif : chaque site optimise localement un planning de 24 h ; un coordinateur reçoit les propositions toutes les heures ; les sites confirment ensuite leurs échanges. Le calcul est réparti, l’organisation comporte un coordinateur, et l’accord possède son propre protocole de validation.",
+      "readingSources": [
+        {
+          "title": "Boyd et al. · Distributed Optimization via ADMM",
+          "url": "https://stanford.edu/~boyd/papers/admm_distr_stats.html"
+        }
       ]
     },
     "guarantees": {
@@ -487,6 +1325,95 @@
           "alghamdi",
           "Faisabilité conditionnée à des écarts bornés et des réserves suffisantes."
         ]
+      ],
+      "explanations": [
+        {
+          "attribute": "Physiques",
+          "question": "Quelles propriétés physiques sont établies ?",
+          "combination": "Faisabilité et stabilité sont des propriétés différentes ; l’une ne prouve pas l’autre.",
+          "implication": "La garantie ne concerne que les phénomènes et contraintes représentés par le modèle utilisé.",
+          "options": [
+            {
+              "label": "Faisabilité",
+              "definition": "La décision satisfait les contraintes du modèle. La faisabilité récursive affirme, sous hypothèses, que l’on pourra encore trouver une décision admissible aux étapes suivantes.",
+              "example": "Le planning respecte les limites de batterie et d’échange dans les scénarios couverts."
+            },
+            {
+              "label": "Stabilité électrique",
+              "definition": "Les grandeurs électriques conservent ou retrouvent un comportement défini comme stable après une perturbation. La notion précise de stabilité doit être indiquée.",
+              "example": "Établir que la fréquence revient dans une zone admissible après un changement de charge, selon le modèle étudié."
+            }
+          ]
+        },
+        {
+          "attribute": "Décisionnelles",
+          "question": "Que sait-on de la qualité et de la disponibilité du résultat ?",
+          "combination": "Ces propriétés ne sont pas équivalentes : converger ne signifie pas finir avant l’échéance, et finir vite ne garantit pas l’optimalité.",
+          "implication": "Il faut préciser la qualité exigée au moment où la décision doit être appliquée.",
+          "options": [
+            {
+              "label": "Optimalité",
+              "definition": "La solution atteint le meilleur objectif dans un périmètre défini, ou un écart à cet optimum est borné. Préciser optimalité locale, globale ou approximation.",
+              "example": "Garantir un coût à moins d’un écart donné de l’optimum du problème formulé."
+            },
+            {
+              "label": "Délai",
+              "definition": "Une décision exploitable est produite avant une limite définie ; distinguer preuve de borne et temps observé en expérience.",
+              "example": "Retourner une solution admissible en moins de trente secondes dans les conditions annoncées."
+            },
+            {
+              "label": "Convergence",
+              "definition": "Les itérations se rapprochent d’un objet défini : solution, point fixe ou consensus, selon la méthode.",
+              "example": "Les propositions d’échange des sites deviennent compatibles lorsque les itérations se poursuivent sous les hypothèses du théorème."
+            }
+          ]
+        },
+        {
+          "attribute": "Collectives",
+          "question": "Quelles propriétés de la coopération sont établies ?",
+          "combination": "Les propriétés sont cumulables et nécessitent chacune une définition et un critère de vérification.",
+          "implication": "Une bonne performance moyenne peut masquer des participants défavorisés ou des engagements incompatibles.",
+          "options": [
+            {
+              "label": "Équité",
+              "definition": "La répartition satisfait une règle explicite entre acteurs ou dans le temps.",
+              "example": "Borner l’écart de délestage cumulé entre sites comparables."
+            },
+            {
+              "label": "Participation",
+              "definition": "La coopération satisfait une condition d’acceptabilité définie pour les acteurs concernés.",
+              "example": "Chaque participant paie au plus ce qu’il aurait payé seul selon une référence explicitée."
+            },
+            {
+              "label": "Cohérence",
+              "definition": "Les décisions et engagements des acteurs sont mutuellement compatibles selon le protocole.",
+              "example": "La quantité exportée promise par un site correspond à la quantité importée attendue par son partenaire pour la même version d’accord."
+            }
+          ]
+        },
+        {
+          "attribute": "Portée",
+          "question": "Sur quel périmètre la propriété est-elle valable ?",
+          "combination": "Modèle, hypothèses et régime sont trois éléments complémentaires d’une même affirmation conditionnelle.",
+          "implication": "Une garantie ne doit pas être transférée à un autre contexte sans vérifier que ses conditions restent satisfaites.",
+          "options": [
+            {
+              "label": "Modèle",
+              "definition": "Les équations et abstractions dans lesquelles la propriété est établie.",
+              "example": "Une preuve fondée sur un bilan agrégé n’établit pas les limites de tension d’un modèle qui n’y figure pas."
+            },
+            {
+              "label": "Hypothèses",
+              "definition": "Conditions nécessaires à l’argument ou à l’expérience.",
+              "example": "Disponibilité de réserves suffisantes, erreurs de prévision bornées ou hypothèses de convexité."
+            },
+            {
+              "label": "Régime",
+              "definition": "Situations de fonctionnement et de perturbation couvertes.",
+              "example": "Fonctionnement connecté avec coupures de communication courtes, sans conclusion sur un îlotage prolongé."
+            }
+          ]
+        }
       ]
     },
     "evaluation": {
@@ -532,9 +1459,103 @@
           "zhou",
           "Cas IEEE 13-bus modifié et SMART-DS."
         ]
+      ],
+      "explanations": [
+        {
+          "attribute": "Preuves",
+          "question": "Quel argument justifie une propriété annoncée ?",
+          "combination": "Un théorème et ses hypothèses doivent être lus ensemble ; une courbe de simulation ne remplace pas une preuve générale.",
+          "implication": "Il faut rattacher la conclusion exacte au résultat formel qui l’établit.",
+          "options": [
+            {
+              "label": "Théorème",
+              "definition": "Énoncé démontré dans un cadre mathématique donné.",
+              "example": "Démontrer la convergence pour une classe de problèmes convexes."
+            },
+            {
+              "label": "Hypothèses de preuve",
+              "definition": "Conditions sur les données, les modèles ou les échanges qui permettent la démonstration.",
+              "example": "La preuve suppose des délais bornés : elle ne couvre pas des partitions permanentes."
+            }
+          ]
+        },
+        {
+          "attribute": "Essais",
+          "question": "À quel niveau de réalisme la méthode est-elle testée ?",
+          "combination": "Ces moyens sont complémentaires ; davantage de matériel ne suffit pas à rendre les scénarios représentatifs.",
+          "implication": "Documenter les composants simulés, réels et simplifiés permet d’interpréter les résultats.",
+          "options": [
+            {
+              "label": "Simulation",
+              "definition": "Le système et ses perturbations sont représentés dans un environnement numérique.",
+              "example": "Simuler production, consommation et décisions de plusieurs microgrids."
+            },
+            {
+              "label": "Cosimulation",
+              "definition": "Plusieurs simulateurs spécialisés sont couplés, avec des règles d’échange et de synchronisation.",
+              "example": "Coupler un simulateur électrique et un simulateur de communication."
+            },
+            {
+              "label": "Matériel",
+              "definition": "Tout ou partie du dispositif est réel, dans un banc ou sur le terrain ; préciser s’il s’agit du contrôleur ou du système physique.",
+              "example": "Un contrôleur réel pilote un réseau simulé en temps réel, ou un essai utilise une batterie réelle."
+            }
+          ]
+        },
+        {
+          "attribute": "Scénarios",
+          "question": "Quelles situations et comparaisons sont testées ?",
+          "combination": "Échelle, perturbations et méthodes de référence doivent être décrites séparément.",
+          "implication": "Un avantage observé sur un cas unique ne prouve pas une supériorité pour tous les régimes.",
+          "options": [
+            {
+              "label": "Échelle",
+              "definition": "Taille et complexité des systèmes testés.",
+              "example": "Comparer cinq, vingt puis cent sites, en indiquant leurs ressources et leur hétérogénéité."
+            },
+            {
+              "label": "Pannes",
+              "definition": "Perturbations injectées, leurs paramètres et leur mode de génération.",
+              "example": "Comparer des pertes indépendantes et des rafales longues à taux moyen comparable."
+            },
+            {
+              "label": "Références comparées",
+              "definition": "Méthodes de comparaison et conditions dans lesquelles elles sont exécutées.",
+              "example": "Comparer à une gestion locale et à un optimum centralisé en précisant leurs informations et budgets de calcul respectifs."
+            }
+          ]
+        },
+        {
+          "attribute": "Traçabilité",
+          "question": "Où retrouver et vérifier l’élément utilisé dans la carte ?",
+          "combination": "Ces traces se complètent ; leur disponibilité doit être renseignée au lieu d’être supposée.",
+          "implication": "Une observation devient vérifiable lorsqu’elle pointe vers une source précise et une version identifiable.",
+          "options": [
+            {
+              "label": "Section",
+              "definition": "Localisation du passage qui énonce l’hypothèse, la méthode ou le résultat.",
+              "example": "Associer une hypothèse à la section « Communication model » et à une page."
+            },
+            {
+              "label": "Équation",
+              "definition": "Expression mathématique qui définit une contrainte ou un critère.",
+              "example": "Pointer vers l’équation de répartition du délestage cumulé."
+            },
+            {
+              "label": "Données",
+              "definition": "Jeux de données et paramètres permettant de comprendre ou reproduire l’expérience.",
+              "example": "Fournir les séries de consommation et les scénarios de panne utilisés."
+            },
+            {
+              "label": "Code",
+              "definition": "Implémentation et version logicielle employées pour produire les résultats.",
+              "example": "Référencer un dépôt et un commit, en tenant compte des corrections publiées."
+            }
+          ]
+        }
       ]
     }
   },
-  "version": 1,
-  "updated": "2026-09-23"
+  "version": 2,
+  "updated": "2026-09-28"
 }

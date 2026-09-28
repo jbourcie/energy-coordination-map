@@ -52,3 +52,9 @@ node --check docs/app.js
 ```
 
 Le validateur vérifie les identifiants de concepts, les références croisées, les attributs et les URL des publications. Une validation structurelle n’est pas une validation scientifique.
+
+## Explications pédagogiques (v0.2)
+
+Chaque concept comporte `explanations`, dans le même ordre que `attrs`. Une entrée contient `attribute`, `question`, `combination` (modalités exclusives, combinables ou paramètres distincts), `implication` et `options` (libellé `label`, `definition`, `example`). Les exemples sont fictifs et les listes non exhaustives. `workedExample` illustre certains concepts et `readingSources` contient des sources complémentaires de définition, hors corpus bibliographique.
+
+La première sous-dimension est ouverte à l’arrivée ; les autres se déplient individuellement ou avec « Tout développer ». La recherche de concepts inclut aussi les définitions et les exemples. Le validateur vérifie la présence d’explications pour chacune des 44 sous-dimensions.

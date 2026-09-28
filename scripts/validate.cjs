@@ -8,6 +8,12 @@ assert.deepEqual([...ids].sort(),Object.keys(data.nodes).sort(),'Concept orpheli
 for(const [id,n] of Object.entries(data.nodes)){
  assert.ok(n.name,`Nom manquant : ${id}`);
  for(const a of n.attrs)assert.ok(a.length===2&&a.every(v=>typeof v==='string'),`Attribut incorrect : ${id}`);
+ assert.equal(n.explanations.length,n.attrs.length,`Explications incomplètes : ${id}`);
+ for(const [i,x] of n.explanations.entries()){
+  assert.equal(x.attribute,n.attrs[i][0]);
+  assert.ok(x.question&&x.combination&&x.implication&&x.options.length,`Dimension non expliquée : ${id}`);
+  for(const o of x.options)assert.ok(o.label&&o.definition&&o.example,`Alternative non expliquée : ${id}`);
+ }
  for(const [verb,target] of n.rels)assert.ok(verb&&data.nodes[target],`Lien inconnu : ${id} → ${target}`);
  for(const [ref,note] of n.refs)assert.ok(data.refs[ref]&&note,`Référence inconnue : ${id} → ${ref}`);
 }
