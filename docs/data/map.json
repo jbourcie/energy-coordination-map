@@ -37,13 +37,200 @@
       "name": "Parisio et al. · 2017",
       "url": "https://doi.org/10.1109/TSG.2017.2726941",
       "title": "Cooperative MPC-based Energy Management for Networked Microgrids",
-      "status": "Classification partielle"
+      "status": "Retenu · première lecture",
+      "selection": "retenu",
+      "venue": "IEEE Transactions on Smart Grid",
+      "source": "https://cris.vtt.fi/en/publications/cooperative-mpc-based-energy-management-for-networked-microgrids/",
+      "review": [
+        {
+          "label": "Problème et décisions",
+          "text": "Coordonner la gestion énergétique de plusieurs microgrids partageant certaines ressources distribuées."
+        },
+        {
+          "label": "Méthode",
+          "text": "MPC coopératif : planifier puis réviser les décisions à partir des informations disponibles."
+        },
+        {
+          "label": "Temporalité",
+          "text": "Gestion énergétique à horizon glissant. Horizon, pas et fréquence de révision à relever dans le texte ; MPC ne détermine pas à lui seul ces valeurs."
+        },
+        {
+          "label": "Apport à notre comparaison",
+          "text": "Point de départ pour étudier le couplage entre décisions locales et ressources partagées."
+        },
+        {
+          "label": "À vérifier",
+          "text": "Hypothèses de prévision, échanges requis, faisabilité et scénarios de communication dégradée."
+        }
+      ],
+      "readingLevel": "Résumé et notice bibliographique consultés ; lecture intégrale et traces par section à compléter."
+    },
+    "wang2018": {
+      "name": "Wang et Huang · 2018",
+      "title": "Incentivizing Energy Trading for Interconnected Microgrids",
+      "url": "https://doi.org/10.1109/TSG.2016.2614988",
+      "venue": "IEEE Transactions on Smart Grid",
+      "selection": "retenu",
+      "status": "Retenu · première lecture",
+      "source": "https://research.monash.edu/en/publications/incentivizing-energy-trading-for-interconnected-microgrids/",
+      "review": [
+        {
+          "label": "Problème et décisions",
+          "text": "Organiser les échanges entre microgrids excédentaires et déficitaires et le partage des bénéfices."
+        },
+        {
+          "label": "Méthode",
+          "text": "Mécanisme incitatif fondé sur la négociation de Nash, associé à la gestion énergétique."
+        },
+        {
+          "label": "Temporalité",
+          "text": "Échanges et ordonnancement énergétique ; horizon, pas et moment de négociation à documenter."
+        },
+        {
+          "label": "Apport à notre comparaison",
+          "text": "Introduit la question de l’intérêt individuel à coopérer, au-delà du coût total."
+        },
+        {
+          "label": "À vérifier",
+          "text": "Option de non-coopération, informations privées, protocole distribué et validité des accords si les communications sont interrompues."
+        }
+      ],
+      "readingLevel": "Résumé et notice bibliographique consultés ; lecture intégrale et traces par section à compléter."
+    },
+    "morstyn2019": {
+      "name": "Morstyn, Teytelboym et McCulloch · 2019",
+      "title": "Bilateral Contract Networks for Peer-to-Peer Energy Trading",
+      "url": "https://doi.org/10.1109/TSG.2017.2786668",
+      "venue": "IEEE Transactions on Smart Grid",
+      "selection": "retenu",
+      "status": "Retenu · première lecture",
+      "source": "https://www.research.ed.ac.uk/en/publications/bilateral-contract-networks-for-peer-to-peer-energy-trading/",
+      "review": [
+        {
+          "label": "Problème et décisions",
+          "text": "Former un réseau de contrats bilatéraux entre acteurs énergétiques ayant des préférences propres."
+        },
+        {
+          "label": "Méthode",
+          "text": "Ajustement distribué des prix ; analyse de stabilité du réseau de contrats sous des hypothèses de substituabilité."
+        },
+        {
+          "label": "Temporalité",
+          "text": "Marchés à terme et en temps réel. Distinguer durée du contrat, échéance de livraison et itérations de négociation."
+        },
+        {
+          "label": "Apport à notre comparaison",
+          "text": "Permet de traiter les engagements entre partenaires comme objets de décision."
+        },
+        {
+          "label": "À vérifier",
+          "text": "Hypothèses exactes du résultat de stabilité et traitement de l’incertitude. La stabilité économique ne signifie pas stabilité électrique ou tolérance aux pannes."
+        }
+      ],
+      "readingLevel": "Résumé et notice bibliographique consultés ; lecture intégrale et traces par section à compléter."
+    },
+    "moret2019": {
+      "name": "Moret et Pinson · 2019",
+      "title": "Energy Collectives: A Community and Fairness Based Approach to Future Electricity Markets",
+      "url": "https://doi.org/10.1109/TPWRS.2018.2808961",
+      "venue": "IEEE Transactions on Power Systems",
+      "selection": "retenu",
+      "status": "Retenu · première lecture",
+      "source": "https://orbit.dtu.dk/en/publications/energy-collectives-a-community-and-fairness-based-approach-to-fut/",
+      "review": [
+        {
+          "label": "Problème et décisions",
+          "text": "Organiser un marché communautaire en tenant compte des préférences collectives et de l’équité."
+        },
+        {
+          "label": "Architecture",
+          "text": "Un tiers supervise les accords collectifs et l’interface avec l’opérateur de marché."
+        },
+        {
+          "label": "Temporalité",
+          "text": "Organisation et allocation de marché ; horizons et fréquence de révision à relever."
+        },
+        {
+          "label": "Apport à notre comparaison",
+          "text": "Relie organisation des acteurs et critères de partage ; une communauté ne se réduit pas à une topologie électrique."
+        },
+        {
+          "label": "Évaluation et limites",
+          "text": "Cas numériques et indicateurs d’équité. Le résumé ne permet pas de coder la résistance aux pertes de communication."
+        }
+      ],
+      "readingLevel": "Résumé et notice bibliographique consultés ; lecture intégrale et traces par section à compléter."
+    },
+    "sorin2019": {
+      "name": "Sorin, Bobo et Pinson · 2019",
+      "title": "Consensus-Based Approach to Peer-to-Peer Electricity Markets With Product Differentiation",
+      "url": "https://doi.org/10.1109/TPWRS.2018.2872880",
+      "venue": "IEEE Transactions on Power Systems",
+      "selection": "retenu",
+      "status": "Retenu · première lecture",
+      "source": "https://orbit.dtu.dk/en/publications/consensus-based-approach-to-peer-to-peer-electricity-markets-with/",
+      "review": [
+        {
+          "label": "Problème et décisions",
+          "text": "Effectuer un dispatch économique par échanges bilatéraux en permettant de différencier les produits."
+        },
+        {
+          "label": "Méthode",
+          "text": "Modèle Multi-Bilateral Economic Dispatch, résolu par Relaxed Consensus+Innovation, de manière décentralisée."
+        },
+        {
+          "label": "Temporalité",
+          "text": "Allocation de marché ; distinguer la période énergétique des itérations de l’algorithme. Valeurs à relever."
+        },
+        {
+          "label": "Apport à notre comparaison",
+          "text": "Associe préférences de transaction et architecture de calcul décentralisée."
+        },
+        {
+          "label": "À vérifier",
+          "text": "Informations échangées, synchronisme, conditions de convergence et contraintes électriques. Un algorithme de consensus ne garantit pas, seul, la tolérance aux pertes de messages."
+        }
+      ],
+      "readingLevel": "Résumé et notice bibliographique consultés ; lecture intégrale et traces par section à compléter."
+    },
+    "dynge2025": {
+      "name": "Dynge et Cali · 2025",
+      "title": "Distributive energy justice in local electricity markets: Assessing the performance of fairness indicators",
+      "url": "https://doi.org/10.1016/j.apenergy.2025.125463",
+      "venue": "Applied Energy",
+      "selection": "retenu",
+      "status": "Retenu · première lecture",
+      "source": "https://pure.york.ac.uk/portal/en/publications/distributive-energy-justice-in-local-electricity-markets-assessin/",
+      "review": [
+        {
+          "label": "Problème",
+          "text": "Évaluer si les indicateurs usuels d’équité traduisent la justice distributive recherchée dans les marchés locaux."
+        },
+        {
+          "label": "Rôle dans le corpus",
+          "text": "Article méthodologique pour choisir et interpréter les critères d’évaluation des solutions."
+        },
+        {
+          "label": "Décisions et temporalité",
+          "text": "N’est pas retenu comme méthode d’ordonnancement. Temporalité des données et agrégation des indicateurs à documenter."
+        },
+        {
+          "label": "Apport à notre comparaison",
+          "text": "Oblige à préciser ce qui est distribué, à qui, et selon quelle conception de la justice."
+        },
+        {
+          "label": "À vérifier",
+          "text": "Définitions, indicateurs, population et scénarios exacts avant de reprendre une métrique dans nos expériences."
+        }
+      ],
+      "readingLevel": "Résumé et notice bibliographique consultés ; lecture intégrale et traces par section à compléter."
     },
     "guo": {
       "name": "Guo et al. · 2018",
       "url": "https://doi.org/10.1109/TII.2017.2749264",
       "title": "Hierarchical decentralized optimization architecture for economic dispatch",
-      "status": "Classification partielle"
+      "status": "À réexaminer · hors premier lot",
+      "selection": "a_examiner"
     },
     "alghamdi": {
       "name": "Alghamdi · 2026",
@@ -53,13 +240,15 @@
         "url": "https://doi.org/10.1371/journal.pone.0352945",
         "note": "Correction du 30 juin 2026 concernant le fichier de code supplémentaire S2."
       },
-      "status": "Classification partielle"
+      "status": "À réexaminer · hors premier lot",
+      "selection": "a_examiner"
     },
     "zhou": {
       "name": "Zhou, Zamzam et Bernstein · 2026",
       "url": "https://doi.org/10.1016/j.epsr.2025.112557",
       "title": "Networked microgrid topology reconfiguration to promote fairness in proactive load shedding",
-      "status": "Classification partielle"
+      "status": "À réexaminer · hors premier lot",
+      "selection": "a_examiner"
     }
   },
   "nodes": {
@@ -221,12 +410,7 @@
           "time"
         ]
       ],
-      "refs": [
-        [
-          "parisio",
-          "Ressources partagées, chauffage et charges flexibles."
-        ]
-      ],
+      "refs": [],
       "explanations": [
         {
           "attribute": "Production",
@@ -351,6 +535,14 @@
         [
           "guo",
           "Calculs locaux et agent coordinateur ; autonomie stratégique à examiner."
+        ],
+        [
+          "wang2018",
+          "Microgrids qui peuvent bénéficier mutuellement des échanges."
+        ],
+        [
+          "moret2019",
+          "Collectif énergétique avec tiers assurant une interface de marché."
         ]
       ],
       "explanations": [
@@ -474,12 +666,24 @@
       ],
       "refs": [
         [
-          "parisio",
-          "Coordination des ressources et charges."
-        ],
-        [
           "zhou",
           "Reconfiguration et répartition du délestage."
+        ],
+        [
+          "parisio",
+          "Gestion énergétique coopérative avec ressources partagées."
+        ],
+        [
+          "wang2018",
+          "Échanges énergétiques et répartition des bénéfices."
+        ],
+        [
+          "morstyn2019",
+          "Formation de contrats bilatéraux."
+        ],
+        [
+          "sorin2019",
+          "Dispatch économique par transactions bilatérales différenciées."
         ]
       ],
       "explanations": [
@@ -615,6 +819,14 @@
         [
           "zhou",
           "Horizon glissant ; équité sur les délestages successifs."
+        ],
+        [
+          "parisio",
+          "Horizon glissant ; valeurs temporelles à relever."
+        ],
+        [
+          "morstyn2019",
+          "Marchés à terme et temps réel ; temporalités numériques à relever."
         ]
       ],
       "explanations": [
@@ -749,12 +961,20 @@
       ],
       "refs": [
         [
-          "parisio",
-          "Coûts, ressources partagées et bénéfice de coopération."
-        ],
-        [
           "zhou",
           "Contraintes d’équité temporelle du délestage."
+        ],
+        [
+          "wang2018",
+          "Incitation à coopérer et partage des gains par négociation de Nash."
+        ],
+        [
+          "moret2019",
+          "Préférences communautaires et équité."
+        ],
+        [
+          "dynge2025",
+          "Justice distributive et pertinence des indicateurs d’équité."
         ]
       ],
       "explanations": [
@@ -894,6 +1114,10 @@
         [
           "guo",
           "Échanges d’estimations locales avec le coordinateur."
+        ],
+        [
+          "sorin2019",
+          "Préférences de produit ; contenu exact des messages à relever."
         ]
       ],
       "explanations": [
@@ -1187,6 +1411,18 @@
         [
           "alghamdi",
           "ADMM, contrats réciproques et réparation locale."
+        ],
+        [
+          "parisio",
+          "Cadre de MPC coopératif."
+        ],
+        [
+          "moret2019",
+          "Présence d’un tiers de supervision ; ne pas coder entièrement pair-à-pair."
+        ],
+        [
+          "sorin2019",
+          "Algorithme décentralisé Relaxed Consensus+Innovation."
         ]
       ],
       "explanations": [
@@ -1324,6 +1560,10 @@
         [
           "alghamdi",
           "Faisabilité conditionnée à des écarts bornés et des réserves suffisantes."
+        ],
+        [
+          "morstyn2019",
+          "Stabilité économique conditionnelle des contrats ; ne pas la confondre avec une garantie électrique."
         ]
       ],
       "explanations": [
@@ -1458,6 +1698,10 @@
         [
           "zhou",
           "Cas IEEE 13-bus modifié et SMART-DS."
+        ],
+        [
+          "dynge2025",
+          "Analyse de la performance des métriques d’équité dans les marchés locaux."
         ]
       ],
       "explanations": [
@@ -1557,5 +1801,6 @@
     }
   },
   "version": 2,
-  "updated": "2026-09-28"
+  "updated": "2026-09-28",
+  "corpusNote": "Premier lot : 6 articles de recherche, sélectionnés pour leurs angles complémentaires. Les 3 références antérieures restent à réexaminer. La couverture des pertes de communication et de la coordination de longue durée reste à renforcer."
 }
