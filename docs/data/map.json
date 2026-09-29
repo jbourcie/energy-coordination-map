@@ -489,236 +489,423 @@
       "url": "https://doi.org/10.1109/TSG.2017.2786668",
       "venue": "IEEE Transactions on Smart Grid",
       "selection": "retenu",
-      "status": "Retenu · première lecture",
-      "source": "https://www.research.ed.ac.uk/en/publications/bilateral-contract-networks-for-peer-to-peer-energy-trading/",
+      "status": "Lecture approfondie · 44 dimensions examinées",
+      "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading",
       "review": [
         {
-          "label": "Problème et décisions",
-          "text": "Former un réseau de contrats bilatéraux entre acteurs énergétiques ayant des préférences propres."
+          "label": "S1 · Problème et hypothèses",
+          "text": "Marchés forward et temps réel de contrats bilatéraux. Utilités quasi linéaires, préférences pleinement substituables et obligations énergétiques (II–III). Les pertes électriques sont exclues ; les couches inférieures assurent la stabilité électrique."
         },
         {
-          "label": "Méthode",
-          "text": "Ajustement distribué des prix ; analyse de stabilité du réseau de contrats sous des hypothèses de substituabilité."
+          "label": "S2 · Décisions et temporalités",
+          "text": "Chaque agent choisit ses contrats ; les prix progressent jusqu’à accord acheteur/vendeur (III-D, IV). Cas étudié : échanges horaires sur une journée, lots de 0,1 kWh. L’avance du marché forward ne doit pas être assimilée automatiquement à J−1."
         },
         {
-          "label": "Temporalité",
-          "text": "Marchés à terme et en temps réel. Distinguer durée du contrat, échéance de livraison et itérations de négociation."
+          "label": "S3 · Garanties et limites",
+          "text": "Les théorèmes 1–3 démontrent la substituabilité des préférences proposées ; le lien avec existence/stabilité mobilise la théorie citée. Stabilité économique et rationalité individuelle ne prouvent ni équité ni sûreté électrique. Les modalités réseau de livraison des messages ne sont pas spécifiées."
         },
         {
-          "label": "Apport à notre comparaison",
-          "text": "Permet de traiter les engagements entre partenaires comme objets de décision."
-        },
-        {
-          "label": "À vérifier",
-          "text": "Hypothèses exactes du résultat de stabilité et traitement de l’incertitude. La stabilité économique ne signifie pas stabilité électrique ou tolérance aux pannes."
+          "label": "S4 · Évaluation",
+          "text": "Un microgrid îloté : deux générateurs, un intermédiaire et 25 prosumers. Les cas A/B comparent neutralité et aversion au risque (V). Pas de test de perte de communication. L’intermédiaire organise les échanges sans constituer un optimiseur central."
         }
       ],
-      "readingLevel": "Résumé et notice bibliographique consultés ; lecture intégrale et traces par section à compléter.",
+      "readingLevel": "Texte auteur accepté examiné, avec localisation par section/équation. Codage explicite et déductions séparés ; aucun score de qualité attribué.",
       "scope": "Comparaison marchés et équité",
       "theme": "Engagements bilatéraux",
       "placement": {
         "physical.0": {
+          "state": "not_specified",
           "options": [],
-          "state": "unknown"
+          "evidence": "Graphe contractuel défini ; câblage électrique non décrit.",
+          "locator": "II, V, fig. 1",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "physical.1": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Îlotée"
+          ],
+          "evidence": "Cas expérimental : un microgrid îloté.",
+          "locator": "V",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "physical.2": {
-          "options": [],
-          "state": "unknown"
+          "state": "inferred",
+          "options": [
+            "Bilan agrégé"
+          ],
+          "evidence": "Équilibre des volumes contractuels ; pertes électriques exclues explicitement.",
+          "locator": "II, III, eq. 7,10,12",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "physical.3": {
+          "state": "not_applicable",
           "options": [],
-          "state": "unknown"
+          "evidence": "Pannes et reconfiguration électrique hors modèle.",
+          "locator": "II–V",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "resources.0": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Pilotable",
+            "Renouvelable"
+          ],
+          "evidence": "Générateurs diesel et PV des prosumers.",
+          "locator": "III-C, V",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "resources.1": {
+          "state": "not_applicable",
           "options": [],
-          "state": "unknown"
+          "evidence": "Aucun modèle de stockage dédié ; charges flexibles couplées dans le temps.",
+          "locator": "III-A, V",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "resources.2": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Flexibles"
+          ],
+          "evidence": "Charges incompressibles et flexibles ; incompressible ne signifie pas critique.",
+          "locator": "III-A, V",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "resources.3": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Production",
+            "Demande"
+          ],
+          "evidence": "Incertitude sur demande nette, plus prix temps réel.",
+          "locator": "III-A, eq. 8–9",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "actors.0": {
-          "options": [],
-          "state": "unknown"
+          "state": "inferred",
+          "options": [
+            "Propriété multiple"
+          ],
+          "evidence": "Ressources et utilités propres aux agents ; détail juridique absent.",
+          "locator": "I–III",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "actors.1": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Veto"
+          ],
+          "evidence": "Accepter/refuser les offres ; rationalité individuelle du résultat.",
+          "locator": "Définition 1, IV",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "actors.2": {
+          "state": "explicit",
           "options": [
             "Entre pairs"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://www.research.ed.ac.uk/en/publications/bilateral-contract-networks-for-peer-to-peer-energy-trading/"
+          "evidence": "Décisions locales ; un fournisseur intermédiaire dans le cas simulé.",
+          "locator": "IV–V",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "actors.3": {
-          "options": [],
-          "state": "unknown"
+          "state": "inferred",
+          "options": [
+            "Stratégique"
+          ],
+          "evidence": "Agents maximisant leur utilité ; aucune incitation à la sincérité prouvée.",
+          "locator": "Eq. 1–2, III",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "actions.0": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Produire",
+            "Décaler"
+          ],
+          "evidence": "Production et satisfaction de charges flexibles.",
+          "locator": "III-A/C",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "actions.1": {
+          "state": "explicit",
           "options": [
             "Échanger",
             "Tarifer"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://www.research.ed.ac.uk/en/publications/bilateral-contract-networks-for-peer-to-peer-energy-trading/"
+          "evidence": "Lots énergétiques et prix bilatéraux.",
+          "locator": "II, IV",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "actions.2": {
+          "state": "explicit",
           "options": [
             "Choisir des partenaires"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://www.research.ed.ac.uk/en/publications/bilateral-contract-networks-for-peer-to-peer-energy-trading/"
+          "evidence": "Sélection parmi les échanges admissibles du graphe contractuel.",
+          "locator": "IV, étape 1",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "actions.3": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Confirmé"
+          ],
+          "evidence": "Obligations forward prises en compte lors du marché temps réel.",
+          "locator": "II ; III-A, eq. 7",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "time.0": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Journalier ou pluri-journalier"
+          ],
+          "evidence": "Simulation sur une journée ; avance précise du marché forward non fixée.",
+          "locator": "II, V",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "time.1": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Pas grossier"
+          ],
+          "evidence": "Échanges horaires ; lot 0,1 kWh.",
+          "locator": "V",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "time.2": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Périodique"
+          ],
+          "evidence": "Marchés forward et temps réel pour chaque intervalle.",
+          "locator": "II",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "time.3": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Échéance",
+            "Durée de validité"
+          ],
+          "evidence": "Livraison par intervalle ; fenêtres des charges flexibles.",
+          "locator": "II, III-A",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "criteria.0": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Coût"
+          ],
+          "evidence": "Utilité individuelle, coûts et aversion au risque.",
+          "locator": "Eq. 1,7–13",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "criteria.1": {
+          "state": "not_applicable",
           "options": [],
-          "state": "unknown"
+          "evidence": "Équité normative non optimisée ; ne pas confondre avec stabilité économique.",
+          "locator": "Définition 1, IV",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "criteria.2": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Contractuelles",
+            "Locales"
+          ],
+          "evidence": "Volumes, obligations, limites de production et charges.",
+          "locator": "Eq. 7,10,12",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "criteria.3": {
+          "state": "explicit",
           "options": [],
-          "state": "unknown"
+          "evidence": "Aversion au risque, absente des modalités actuelles.",
+          "locator": "Eq. 9, tableau I",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "information.0": {
+          "state": "explicit",
           "options": [
+            "Prévisions",
             "Accords"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://www.research.ed.ac.uk/en/publications/bilateral-contract-networks-for-peer-to-peer-energy-trading/"
+          "evidence": "Prix anticipés, demande nette et contrats acceptés.",
+          "locator": "II–III",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "information.1": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Local",
+            "Partagé"
+          ],
+          "evidence": "Utilité locale et offres aux partenaires ; pas de garantie de confidentialité.",
+          "locator": "III-D, IV",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "information.2": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Exact",
+            "Bruité"
+          ],
+          "evidence": "Demande connue en temps réel ; estimations incertaines en forward.",
+          "locator": "II, III-A, V",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "information.3": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Vues différentes selon l’acteur"
+          ],
+          "evidence": "Estimations de prix individuelles et imprécises dans les essais.",
+          "locator": "V",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "communication.0": {
+          "state": "explicit",
           "options": [],
-          "state": "unknown"
+          "evidence": "Communications entre partenaires ; graphe contractuel distinct des lignes.",
+          "locator": "II, IV, V",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "communication.1": {
+          "state": "not_specified",
           "options": [],
-          "state": "unknown"
+          "evidence": "Délais, pertes, ordre et acquittements non caractérisés.",
+          "locator": "IV",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "communication.2": {
+          "state": "not_specified",
           "options": [],
-          "state": "unknown"
+          "evidence": "Aucun scénario de panne de communication décrit.",
+          "locator": "IV–V",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "communication.3": {
+          "state": "not_specified",
           "options": [],
-          "state": "unknown"
+          "evidence": "Bornes, reconnexion et corrélations non précisées.",
+          "locator": "IV–V",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "computation.0": {
+          "state": "explicit",
           "options": [
             "Distribué"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://www.research.ed.ac.uk/en/publications/bilateral-contract-networks-for-peer-to-peer-energy-trading/"
+          "evidence": "Choix locaux puis ajustement des prix bilatéraux.",
+          "locator": "III-D, IV",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "computation.1": {
-          "options": [],
-          "state": "unknown"
+          "state": "inferred",
+          "options": [
+            "Synchrone"
+          ],
+          "evidence": "Algorithme par itérations communes ; pas de traitement asynchrone établi.",
+          "locator": "IV, étape 3",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "computation.2": {
+          "state": "explicit",
           "options": [
-            "Négociation"
+            "Négociation",
+            "Optimisation"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://www.research.ed.ac.uk/en/publications/bilateral-contract-networks-for-peer-to-peer-energy-trading/"
+          "evidence": "Choix du meilleur bouquet de contrats et négociation de prix.",
+          "locator": "III-D, IV",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "computation.3": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Validation"
+          ],
+          "evidence": "Accord acheteur/vendeur ; aucun mécanisme de reprise sous panne.",
+          "locator": "IV, étapes 3e–4",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "guarantees.0": {
+          "state": "not_applicable",
           "options": [],
-          "state": "unknown"
+          "evidence": "Stabilité électrique confiée aux couches inférieures ; pas de garantie de flux AC.",
+          "locator": "II",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "guarantees.1": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Convergence"
+          ],
+          "evidence": "Aboutissement à un résultat stable sous substituabilité ; délai réseau non garanti.",
+          "locator": "II, IV, réf. 27",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "guarantees.2": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Participation"
+          ],
+          "evidence": "Rationalité individuelle ; absence de coalition bloquante, pas équité.",
+          "locator": "Définition 1",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "guarantees.3": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Modèle",
+            "Hypothèses"
+          ],
+          "evidence": "Utilités quasi linéaires, substituabilité ; économies d’échelle exclues.",
+          "locator": "II–III",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "evaluation.0": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Théorème",
+            "Hypothèses de preuve"
+          ],
+          "evidence": "Théorèmes 1–3 : préférences substituables, preuves en annexe.",
+          "locator": "III, annexe",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "evaluation.1": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Simulation"
+          ],
+          "evidence": "Deux cas : neutralité et aversion au risque.",
+          "locator": "V",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "evaluation.2": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Échelle",
+            "Références comparées"
+          ],
+          "evidence": "2 générateurs, 1 intermédiaire, 25 prosumers ; comparaison A/B.",
+          "locator": "V, fig. 1–5",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         },
         "evaluation.3": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Section",
+            "Équation",
+            "Données"
+          ],
+          "evidence": "IEEE feeder/NREL et paramètres cités ; code non identifié.",
+          "locator": "V, tableau I, réf. 40–42",
+          "source": "https://www.researchgate.net/publication/322904080_Bilateral_Contract_Networks_for_Peer-to-Peer_Energy_Trading"
         }
-      }
+      },
+      "auditDate": "2026-09-29"
     },
     "moret2019": {
       "name": "Moret et Pinson · 2019",
@@ -2178,10 +2365,10 @@
       "venue": "Applied Energy",
       "source": "https://www.sciencedirect.com/science/article/pii/S0306261922009321",
       "selection": "retenu",
-      "status": "Retenu · codage initial",
+      "status": "Lecture approfondie bloquée · PDF requis",
       "theme": "Planification et ajustement",
       "scope": "Cœur multi-microgrid",
-      "readingLevel": "Codage à partir du résumé/notice ou des extraits accessibles ; hypothèses détaillées à vérifier.",
+      "readingLevel": "Résumé et extraits éditeur seulement. Texte intégral non obtenu : aucune absence d’hypothèse ne peut être conclue.",
       "review": [
         {
           "label": "Problème et décisions",
@@ -2194,24 +2381,28 @@
         {
           "label": "Apport et limites",
           "text": "Permet de distinguer horizon de décision et fréquence de révision. Pas numérique et garanties sous pertes de communication à relever."
+        },
+        {
+          "label": "Limite d’accès — audit du 29 septembre 2026",
+          "text": "Le texte intégral n’a pas été obtenu via l’éditeur ou un dépôt auteur accessible. Le codage initial est conservé. Les dimensions inconnues restent « pas encore examinées », et non « non précisées par les auteurs »."
         }
       ],
       "placement": {
         "physical.0": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "physical.1": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "physical.2": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "physical.3": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "resources.0": {
           "options": [
@@ -2223,11 +2414,11 @@
         },
         "resources.1": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "resources.2": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "resources.3": {
           "options": [
@@ -2240,23 +2431,23 @@
         },
         "actors.0": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "actors.1": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "actors.2": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "actors.3": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "actions.0": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "actions.1": {
           "options": [
@@ -2268,11 +2459,11 @@
         },
         "actions.2": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "actions.3": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "time.0": {
           "options": [
@@ -2284,15 +2475,15 @@
         },
         "time.1": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "time.2": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "time.3": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "criteria.0": {
           "options": [
@@ -2304,55 +2495,55 @@
         },
         "criteria.1": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "criteria.2": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "criteria.3": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "information.0": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "information.1": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "information.2": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "information.3": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "communication.0": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "communication.1": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "communication.2": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "communication.3": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "computation.0": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "computation.1": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "computation.2": {
           "options": [
@@ -2364,41 +2555,42 @@
         },
         "computation.3": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "guarantees.0": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "guarantees.1": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "guarantees.2": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "guarantees.3": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "evaluation.0": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "evaluation.1": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "evaluation.2": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         },
         "evaluation.3": {
           "options": [],
-          "state": "unknown"
+          "state": "not_examined"
         }
-      }
+      },
+      "accessBlocked": true
     },
     "hu2021": {
       "name": "Hu et al. · 2021",
@@ -3090,238 +3282,419 @@
       "title": "Multi-agent Bayesian Deep Reinforcement Learning for Microgrid Energy Management under Communication Failures",
       "url": "https://doi.org/10.1109/JIOT.2021.3131719",
       "venue": "IEEE Internet of Things Journal",
-      "source": "https://arxiv.org/abs/2111.11868",
+      "source": "https://arxiv.org/pdf/2111.11868",
       "selection": "retenu",
-      "status": "Retenu · codage initial",
+      "status": "Lecture approfondie · 44 dimensions examinées",
       "theme": "Pertes de communication",
       "scope": "Transfert méthodologique",
-      "readingLevel": "Codage à partir du résumé/notice ou des extraits accessibles ; hypothèses détaillées à vérifier.",
+      "readingLevel": "Texte auteur accepté examiné, avec localisation par section/équation. Codage explicite et déductions séparés ; aucun score de qualité attribué.",
       "review": [
         {
-          "label": "Problème et décisions",
-          "text": "Gérer l’énergie d’un microgrid dont les agents ne reçoivent pas toujours les informations de leurs pairs."
+          "label": "S1 · Problème et hypothèses",
+          "text": "Un microgrid connecté, avec trois agents PV, stockage et demande flexible. Les Q-valeurs peuvent être perdues, mais des observations probabilistes restent disponibles sans communication directe (III–IV). Cette disponibilité constitue une hypothèse forte."
         },
         {
-          "label": "Méthode",
-          "text": "MA-POMDP, croyances sur les actions des autres agents, double deep Q-learning et sélection conjointe par équilibre corrélé."
+          "label": "S2 · Décision et architecture",
+          "text": "DDQN/LSTM local, enchères de marché et coordination par équilibre corrélé. Relais central des Q-valeurs. En panne : politique gloutonne de l’agent isolé et croyances chez les autres (V, alg. 1). Épisode journalier ; ne pas le confondre avec un calcul day-ahead."
         },
         {
-          "label": "Apport et limites",
-          "text": "Simulation sous incertitude de production et pertes de messages. Transfert méthodologique depuis un microgrid ; pas de validation multi-microgrid ni de garantie sous partitions déduite."
+          "label": "S3 · Portée des garanties",
+          "text": "Les contraintes sont formulées et certaines actions filtrées, mais le texte ne fournit pas de preuve de faisabilité globale ou de convergence du système complet sous panne. La convergence présentée en VI-F est expérimentale."
+        },
+        {
+          "label": "S4 · Évaluation et lecture critique",
+          "text": "Trois agents simulés sous MATLAB, 10 répétitions. Comparaisons avec Nash-DQN et ADMM ; les comportements de repli et nombres de transmissions diffèrent (V-C, VI). Cela limite l’attribution du gain au seul apprentissage bayésien. Pas de validation des partitions longues ou du passage à un cluster."
         }
       ],
       "publicationNote": "En ligne en 2021 ; volume 9(14), 11685–11698, paru en 2022. Version publiée : DOI ; manuscrit auteur utilisé pour la lecture.",
       "placement": {
         "physical.0": {
-          "options": [],
-          "state": "unknown"
+          "state": "inferred",
+          "options": [
+            "Réseau partagé"
+          ],
+          "evidence": "Microgrid commun ; topologie des lignes non détaillée.",
+          "locator": "III-A, fig. 1",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "physical.1": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Connectée"
+          ],
+          "evidence": "Réseau principal utilisé pour équilibrer le marché.",
+          "locator": "III-C, eq. 8",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "physical.2": {
-          "options": [],
-          "state": "unknown"
+          "state": "inferred",
+          "options": [
+            "Bilan agrégé"
+          ],
+          "evidence": "Bilan de puissance ; pas de calcul AC des lignes.",
+          "locator": "III-D, eq. 8–11",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "physical.3": {
+          "state": "not_applicable",
           "options": [],
-          "state": "unknown"
+          "evidence": "Reconfiguration électrique hors problème étudié.",
+          "locator": "III, VI",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "resources.0": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Renouvelable"
+          ],
+          "evidence": "PV ; choix de prix, pas de consigne de production PV.",
+          "locator": "III-B, IV-A",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "resources.1": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Mutualisé"
+          ],
+          "evidence": "Stockage central au niveau du microgrid.",
+          "locator": "III-B, eq. 3–4",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "resources.2": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Flexibles"
+          ],
+          "evidence": "Charges différables ; équipements non pilotables exclus.",
+          "locator": "III-B, tableau II",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "resources.3": {
+          "state": "explicit",
           "options": [
             "Production"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://arxiv.org/abs/2111.11868"
+          "evidence": "Erreur de prévision PV gaussienne en simulation.",
+          "locator": "VI-A, tableau I",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "actors.0": {
+          "state": "not_specified",
           "options": [],
-          "state": "unknown"
+          "evidence": "Propriété juridique des équipements non précisée.",
+          "locator": "III-A/B",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "actors.1": {
+          "state": "explicit",
           "options": [],
-          "state": "unknown"
+          "evidence": "Objectifs et actions locaux autonomes ; participation/veto non étudiés.",
+          "locator": "III-D, IV-A",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "actors.2": {
+          "state": "inferred",
           "options": [],
-          "state": "unknown"
+          "evidence": "Agents autonomes, plateforme de marché et serveur central de relais.",
+          "locator": "III-A/C, fig. 1,6",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "actors.3": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Coopératif"
+          ],
+          "evidence": "Récompenses individuelles avec sélection coordonnée ; manipulation du marché exclue.",
+          "locator": "III-C/D, V-B",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "actions.0": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Stocker",
+            "Décaler"
+          ],
+          "evidence": "Charge/décharge et marche/arrêt des usages.",
+          "locator": "III-B, IV-A",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "actions.1": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Échanger",
+            "Tarifer"
+          ],
+          "evidence": "Enchères PV/stockage, achats et ventes.",
+          "locator": "III-C, IV-A",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "actions.2": {
+          "state": "not_applicable",
           "options": [],
-          "state": "unknown"
+          "evidence": "Organisation des partenaires fixée, aucune coalition optimisée.",
+          "locator": "III-A, alg. 1",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "actions.3": {
-          "options": [],
-          "state": "unknown"
+          "state": "inferred",
+          "options": [
+            "Révisable",
+            "Exécuté"
+          ],
+          "evidence": "Actions par créneau ; pas de contrat durable négocié.",
+          "locator": "Alg. 1, lignes 3–15",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "time.0": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Journalier ou pluri-journalier"
+          ],
+          "evidence": "Épisode de 24 créneaux ; pas une preuve de planification day-ahead.",
+          "locator": "VI-C, fig. 7–8",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "time.1": {
-          "options": [],
-          "state": "unknown"
+          "state": "inferred",
+          "options": [
+            "Pas grossier"
+          ],
+          "evidence": "Créneau horaire déduit des 24 créneaux et fenêtres en heures.",
+          "locator": "VI-C, tableau II",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "time.2": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Périodique"
+          ],
+          "evidence": "Sélection à chaque créneau ; entraînement toutes les 40 épisodes.",
+          "locator": "Alg. 1 ; VI-A",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "time.3": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Échéance"
+          ],
+          "evidence": "Fenêtres de service des appareils ; durée des engagements non modélisée.",
+          "locator": "III-B, tableau II",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "criteria.0": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Coût"
+          ],
+          "evidence": "Coût DSM et profits PV/stockage.",
+          "locator": "Eq. 5–7",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "criteria.1": {
+          "state": "not_applicable",
           "options": [],
-          "state": "unknown"
+          "evidence": "Pas de critère normatif de partage équitable.",
+          "locator": "III-D, V-B",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "criteria.2": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Physiques",
+            "Locales"
+          ],
+          "evidence": "Bilan, attente des appareils et bornes SOC.",
+          "locator": "Eq. 8–11",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "criteria.3": {
+          "state": "explicit",
           "options": [],
-          "state": "unknown"
+          "evidence": "Récompense attendue et équilibre corrélé : choix absent de notre liste.",
+          "locator": "V-B, eq. 20",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "information.0": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Mesures",
+            "Prévisions"
+          ],
+          "evidence": "États locaux, observations, Q-valeurs et croyances.",
+          "locator": "IV-A/B, V-A",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "information.1": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Local",
+            "Partagé",
+            "Privé"
+          ],
+          "evidence": "Q-valeurs échangées ; enchères privées entre agents.",
+          "locator": "III-C, V-A",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "information.2": {
+          "state": "explicit",
           "options": [
+            "Bruité",
             "Absent"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://arxiv.org/abs/2111.11868"
+          "evidence": "Q-valeurs perdues ; observations probabilistes encore disponibles.",
+          "locator": "IV-A, tableau III",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "information.3": {
+          "state": "explicit",
           "options": [
             "Vues différentes selon l’acteur"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://arxiv.org/abs/2111.11868"
+          "evidence": "Croyances propres à chaque agent.",
+          "locator": "IV-A/B",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "communication.0": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Centralisée"
+          ],
+          "evidence": "Relais sans fil par serveur de paramètres.",
+          "locator": "III-A, fig. 6",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "communication.1": {
+          "state": "explicit",
           "options": [
             "Pertes"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://arxiv.org/abs/2111.11868"
+          "evidence": "Délais/obsolescence évoqués ; expériences sur transmissions échouées.",
+          "locator": "I, VI-C/E",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "communication.2": {
+          "state": "explicit",
           "options": [],
-          "state": "unknown"
+          "evidence": "Isolement temporaire d’un agent ; rafales/partitions durables non caractérisées.",
+          "locator": "IV-B, VI-B/E",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "communication.3": {
+          "state": "not_specified",
           "options": [],
-          "state": "unknown"
+          "evidence": "Pas de borne de délai, durée maximale ni corrélation explicitée.",
+          "locator": "III-A, IV-B, VI",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "computation.0": {
+          "state": "explicit",
           "options": [
             "Distribué"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://arxiv.org/abs/2111.11868"
+          "evidence": "BA-DRL exécuté indépendamment par agent ; marché et relais distincts.",
+          "locator": "V-A, VI-F",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "computation.1": {
-          "options": [],
-          "state": "unknown"
+          "state": "inferred",
+          "options": [
+            "Synchrone"
+          ],
+          "evidence": "Créneaux communs et boucle globale ; pas un protocole asynchrone démontré.",
+          "locator": "Alg. 1",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "computation.2": {
+          "state": "explicit",
           "options": [
-            "Apprentissage"
+            "Apprentissage",
+            "Optimisation"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://arxiv.org/abs/2111.11868"
+          "evidence": "DDQN/LSTM, croyances bayésiennes et sélection par équilibre corrélé.",
+          "locator": "IV–V",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "computation.3": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Reprise et repli"
+          ],
+          "evidence": "Agent isolé glouton ; autres agents utilisent leurs croyances.",
+          "locator": "Alg. 1, lignes 6–10",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "guarantees.0": {
+          "state": "not_specified",
           "options": [],
-          "state": "unknown"
+          "evidence": "Contraintes et filtrage des actions ; aucune preuve de sûreté globale identifiée.",
+          "locator": "III-D, fin V-B",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "guarantees.1": {
+          "state": "explicit",
           "options": [],
-          "state": "unknown"
+          "evidence": "Convergence observée ; justification par référence, pas théorème propre au BA-DRL.",
+          "locator": "VI-F, fig. 11",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "guarantees.2": {
+          "state": "not_specified",
           "options": [],
-          "state": "unknown"
+          "evidence": "Pas de garantie de participation, équité ou cohérence sous panne.",
+          "locator": "V-B, VI",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "guarantees.3": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Modèle",
+            "Hypothèses",
+            "Régime"
+          ],
+          "evidence": "Observations disponibles sans communication directe ; cas de trois agents connectés.",
+          "locator": "IV-A, VI-A",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "evaluation.0": {
+          "state": "explicit",
           "options": [],
-          "state": "unknown"
+          "evidence": "Analyse de complexité en annexe ; convergence étayée expérimentalement.",
+          "locator": "VI-F, annexe",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "evaluation.1": {
+          "state": "explicit",
           "options": [
             "Simulation"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://arxiv.org/abs/2111.11868"
+          "evidence": "MATLAB, 10 répétitions, intervalles de confiance à 95 %.",
+          "locator": "VI-A",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "evaluation.2": {
+          "state": "explicit",
           "options": [
+            "Échelle",
             "Pannes",
             "Références comparées"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://arxiv.org/abs/2111.11868"
+          "evidence": "Trois agents ; BA-DRL comparé à Nash-DQN et ADMM.",
+          "locator": "VI-A,D,E",
+          "source": "https://arxiv.org/pdf/2111.11868"
         },
         "evaluation.3": {
-          "options": [],
-          "state": "unknown"
+          "state": "explicit",
+          "options": [
+            "Section",
+            "Équation",
+            "Données"
+          ],
+          "evidence": "Paramètres et pseudocode présents ; dépôt de code non identifié.",
+          "locator": "Tableaux I–III, alg. 1–2, VI-A",
+          "source": "https://arxiv.org/pdf/2111.11868"
         }
-      }
+      },
+      "auditDate": "2026-09-29"
     }
   },
   "nodes": {
@@ -5016,7 +5389,7 @@
   },
   "version": 2,
   "updated": "2026-09-28",
-  "corpusNote": "12 travaux retenus : 7 au cœur de la coordination multi-microgrid, 4 comparaisons sur les marchés et l’équité, 1 transfert sur les pertes de communication. 3 références antérieures restent à réexaminer. Codage initial sourcé, non exhaustif.",
+  "corpusNote": "12 travaux retenus. Zhou et Morstyn : 44 dimensions examinées sur texte auteur. Jani : lecture approfondie bloquée faute de texte intégral. Autres travaux : codage initial depuis les résumés.",
   "synthesis": [
     {
       "title": "Planifier et réviser",
@@ -5048,5 +5421,11 @@
         "zhou2022comm"
       ]
     }
+  ],
+  "auditFindings": [
+    "Le faible remplissage initial provenait surtout de notre lecture limitée aux résumés.",
+    "La grille mélange parfois une valeur du modèle, un résultat prouvé et une observation expérimentale ; ils sont désormais distingués dans les justifications.",
+    "Une journée de simulation n’est pas un horizon de décision day-ahead.",
+    "Des modalités manquent : aversion au risque, architecture hybride, topologie contractuelle et garanties économiques. Les constats sont conservés même sans modalité adéquate."
   ]
 }
