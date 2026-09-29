@@ -2365,232 +2365,432 @@
       "venue": "Applied Energy",
       "source": "https://www.sciencedirect.com/science/article/pii/S0306261922009321",
       "selection": "retenu",
-      "status": "Lecture approfondie bloquée · PDF requis",
+      "status": "Lecture approfondie · 44 dimensions examinées",
       "theme": "Planification et ajustement",
       "scope": "Cœur multi-microgrid",
-      "readingLevel": "Résumé et extraits éditeur seulement. Texte intégral non obtenu : aucune absence d’hypothèse ne peut être conclue.",
+      "readingLevel": "PDF éditeur intégral fourni par l’utilisateur, 13 pages, examiné le 29 septembre 2026. Sections, équations, figures et résultats référencés ; déductions et limites séparées des énoncés explicites.",
       "review": [
         {
-          "label": "Problème et décisions",
-          "text": "Articuler les décisions day-ahead avec les corrections liées aux renouvelables et à la demande en temps réel."
+          "label": "S1 · Système, problème et hypothèses",
+          "text": "Trois microgrids connectés et un opérateur communautaire avec ses propres équipements. Production PV/éolienne, unités pilotables, batteries, usages déplaçables et interruptibles. Bilan agrégé avec bornes d’échange ; incertitudes de production, demande et prix modélisées par scénarios. Pas de modèle de panne électrique ou informatique (§2–3)."
         },
         {
-          "label": "Méthode",
-          "text": "Optimisation stochastique à deux étapes et gestion à deux couches ; horizon glissant pour les ajustements."
+          "label": "S2 · Deux étapes temporelles, deux niveaux de décision",
+          "text": "La veille : MILP horaire local, puis optimisation communautaire. En temps réel : révision toutes les 15 minutes sur un horizon annoncé de 24 h ; seul le premier intervalle est exécuté. Dans le cas hybride, seul MGC participe au marché RT et seule sa batterie y intervient. Les unités arrêtées la veille ne peuvent démarrer en RT (§4 ; §5.1 p. 10)."
         },
         {
-          "label": "Apport et limites",
-          "text": "Permet de distinguer horizon de décision et fréquence de révision. Pas numérique et garanties sous pertes de communication à relever."
+          "label": "Engagements et information",
+          "text": "La clôture DA crée des engagements ; les écarts sont réglés financièrement en RT, à prix unique ou double. Les prix MG–MGC sont fixés par accords antérieurs, pas négociés par l’algorithme. Les MG transmettent leurs surplus/déficits et gardent leurs profils locaux. Délais, pertes et cohérence des versions d’accord ne sont pas étudiés (§2, §3.7)."
         },
         {
-          "label": "Limite d’accès — audit du 29 septembre 2026",
-          "text": "Le texte intégral n’a pas été obtenu via l’éditeur ou un dépôt auteur accessible. Le codage initial est conservé. Les dimensions inconnues restent « pas encore examinées », et non « non précisées par les auteurs »."
+          "label": "S3 · Garanties : point critique",
+          "text": "Le texte revendique une optimalité en affirmant que l’espace des solutions MILP est convexe (p. 8) : cette justification est incorrecte en général à cause des variables entières. Cela ne prouve pas que les solutions calculées sont mauvaises, mais ne démontre ni l’optimalité globale du schéma hiérarchique ni la faisabilité récursive. Les temps de calcul publiés sont des observations, pas des garanties d’échéance."
+        },
+        {
+          "label": "S4 · Résultats et comparabilité",
+          "text": "Avec DR, coût DA : 2 182,75 → 1 922,38 $ (−11,93 %, tableau 2). Marché à prix unique, coût total : 1 538,95 → 1 452,68 $ (−86,27 $, tableau 4). En RT, les coûts d’écart sont négatifs : −643,8 et −469,7 $ (tableau 3) ; il ne faut pas présenter ce dernier poste comme une baisse numérique. Le gain global et le rapprochement des échanges DA/RT sont distincts. Les ressources ajustables en RT diffèrent entre cas, ce qui limite l’attribution du gain au seul algorithme."
+        },
+        {
+          "label": "Placement par rapport à Zhou et Morstyn",
+          "text": "Jani apporte un cadre concret d’engagements DA et de corrections opérationnelles hiérarchiques ; Zhou examine la décision avec transmissions perdues ; Morstyn organise des contrats bilatéraux et leur stabilité économique. Les garanties et unités étudiées diffèrent : leurs gains numériques ne sont pas directement comparables."
         }
       ],
       "placement": {
         "physical.0": {
+          "state": "explicit",
           "options": [],
-          "state": "not_examined"
+          "evidence": "Microgrids électriquement interconnectés et reliés au réseau amont via une communauté. La figure donne l’architecture fonctionnelle, pas les paramètres des lignes ; ne permet pas de trancher « lignes dédiées »/« réseau partagé ».",
+          "locator": "p. 4, §2, fig. 1 ; p. 8, §5",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "physical.1": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Connectée"
+          ],
+          "evidence": "Cas étudié raccordé au réseau. L’îlotage et les transitions ne sont pas évalués.",
+          "locator": "p. 8, §5",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "physical.2": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Bilan agrégé"
+          ],
+          "evidence": "Bilans de puissance MG et MGC et bornes d’échange ; pas de modèle de tension, de flux AC ou de dynamique électrique. Limite de 1 500 kW par MG dans l’annexe.",
+          "locator": "p. 7, eq. (47)–(52) ; p. 12, annexe A",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "physical.3": {
+          "state": "not_applicable",
           "options": [],
-          "state": "not_examined"
+          "evidence": "Aucune reconfiguration ni panne de ligne dans les variables et scénarios de cette étude de planification connectée.",
+          "locator": "§3–5",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "resources.0": {
+          "state": "explicit",
           "options": [
+            "Pilotable",
             "Renouvelable"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://www.sciencedirect.com/science/article/pii/S0306261922009321"
+          "evidence": "PV, éolien, microturbines et piles à combustible ; bornes de production et décisions marche/arrêt.",
+          "locator": "§3.1, §3.5 ; tableaux A1–A2",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "resources.1": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Individuel",
+            "Mutualisé"
+          ],
+          "evidence": "BESS locaux et batterie communautaire. Dans le cas hybride, seule la batterie communautaire participe au marché temps réel ; dans le cas de référence, les quatre batteries participent.",
+          "locator": "§3.3, eq. (22)–(29) ; p. 10, §5.1 ; tableau A3",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "resources.2": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Flexibles"
+          ],
+          "evidence": "Déplacement de consommation conservant l’énergie totale et interruption rémunérée ; demande restante inflexible, sans classe explicite de charges critiques.",
+          "locator": "p. 6, §3.4, eq. (30)–(35)",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "resources.3": {
+          "state": "explicit",
           "options": [
             "Production",
             "Demande"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://www.sciencedirect.com/science/article/pii/S0306261922009321"
+          "evidence": "Incertitudes PV, vent, demande et prix. Weibull pour le vent, Beta pour PV, loi normale pour demande/prix ; réduction de scénarios par MILP. Le prix est une perturbation absente de la liste actuelle de modalités.",
+          "locator": "§3.2, eq. (3)–(21)",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "actors.0": {
+          "state": "not_specified",
           "options": [],
-          "state": "not_examined"
+          "evidence": "Opérateurs de MG/MGC et ressources locales/communautaires identifiés, mais propriété juridique unique ou multiple non précisée.",
+          "locator": "§2, §3.7, conclusion",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "actors.1": {
+          "state": "explicit",
           "options": [],
-          "state": "not_examined"
+          "evidence": "Chaque EMS local optimise ses ressources ; l’EMS communautaire gère ses équipements et les échanges externes. Contrats d’interruption volontaire côté consommateurs, sans mécanisme général de veto, adhésion ou sortie des MG.",
+          "locator": "§2 ; §3.4.1 ; §3.7",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "actors.2": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Autorité hiérarchique"
+          ],
+          "evidence": "Responsabilités MG/MGC/DSO distinctes : décision locale puis coordination communautaire ; seul MGC participe au marché RT dans le cas hybride.",
+          "locator": "§2 ; §4.1 ; p. 10, §5.1",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "actors.3": {
-          "options": [],
-          "state": "not_examined"
+          "state": "inferred",
+          "options": [
+            "Coopératif"
+          ],
+          "evidence": "Coopération par échanges à prix convenu et objectifs de coût locaux/communautaires ; on déduit une exécution conforme des EMS. Aucun jeu de déclarations stratégiques ni mécanisme de sincérité.",
+          "locator": "§2 ; §3.7 ; eq. (45), (49)",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "actions.0": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Produire",
+            "Stocker",
+            "Décaler",
+            "Délester"
+          ],
+          "evidence": "Production, marche/arrêt, charge/décharge, déplacement et interruption des usages. Les unités arrêtées en DA ne peuvent être mises en marche en RT.",
+          "locator": "§3.3–3.5 ; p. 10, §5.1",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "actions.1": {
+          "state": "explicit",
           "options": [
             "Échanger"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://www.sciencedirect.com/science/article/pii/S0306261922009321"
+          "evidence": "Quantités d’échange optimisées ; prix bilatéral MG–MGC convenu en amont, prix externe imposé par le marché (price takers). Rémunération d’interruption fixée par coefficient, pas allocation de compensation décidée.",
+          "locator": "§3.4.1, §3.7 ; eq. (30), (46), (50), (55)",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "actions.2": {
+          "state": "not_applicable",
           "options": [],
-          "state": "not_examined"
+          "evidence": "Composition du groupe et présence des équipements communautaires imposées par scénario. Ni sélection de partenaires ni décision de mutualisation optimisées.",
+          "locator": "§2, §5.1 ; fig. 1",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "actions.3": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Révisable",
+            "Confirmé",
+            "Exécuté"
+          ],
+          "evidence": "Engagements créés à la clôture DA. Ajustement des consignes en RT et règlement des écarts ; premier intervalle RT appliqué. « Confirmé » désigne ici la clôture de marché, pas un protocole d’accord distribué démontré.",
+          "locator": "§3.7 ; §2, fig. 2 ; p. 10, §5.1",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "time.0": {
+          "state": "explicit",
           "options": [
             "Journalier ou pluri-journalier"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://www.sciencedirect.com/science/article/pii/S0306261922009321"
+          "evidence": "Planification DA et horizon de 24 h ; RT décrit par horizon glissant, dont seul le premier intervalle est exécuté. Le texte/fig. 2 ne formalise pas entièrement la gestion de la frontière de journée.",
+          "locator": "§2 ; §4.2 ; p. 10, §5.1",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "time.1": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Pas grossier",
+            "Pas fin"
+          ],
+          "evidence": "Deux étapes distinctes : pas horaire DA, puis 15 minutes RT (96 intervalles sur 24 h). Ce n’est pas une preuve d’un pas variable à l’intérieur du même planning.",
+          "locator": "§4.1–4.2",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "time.2": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Périodique"
+          ],
+          "evidence": "Paramètres et dispatch mis à jour toutes les 15 minutes ; pas de déclenchement événementiel modélisé.",
+          "locator": "§2 ; §4.2 ; p. 10, §5.1",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "time.3": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Échéance",
+            "Durée de validité"
+          ],
+          "evidence": "Offres horaires avant clôture DA et exécution RT par créneau de 15 minutes. Pas d’heure de clôture chiffrée ni de borne formelle du temps de décision ; durée des contrats bilatéraux non spécifiée.",
+          "locator": "§2 ; §3.7 ; §4.2",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "criteria.0": {
+          "state": "explicit",
           "options": [
             "Coût"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://www.sciencedirect.com/science/article/pii/S0306261922009321"
+          "evidence": "Espérance du coût DA (production, démarrage/arrêt, maintenance, batterie, interruption, échanges) puis coût signé des écarts RT. Pas d’objectif autonome d’équité, émissions ou confort.",
+          "locator": "eq. (45)–(46), (49)–(55)",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "criteria.1": {
+          "state": "not_applicable",
           "options": [],
-          "state": "not_examined"
+          "evidence": "Aucun critère de partage équitable ni répartition des gains calculée. La baisse du coût total ne prouve pas un bénéfice individuel pour chaque participant.",
+          "locator": "§4 ; tableaux 2–4",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "criteria.2": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Physiques",
+            "Locales",
+            "Contractuelles"
+          ],
+          "evidence": "SOC et énergie finale, exclusivité charge/décharge, production, bilans, bornes d’échange, DR ; engagements DA servant de référence au règlement RT. Écart autorisé avec règlement, et non livraison exacte imposée.",
+          "locator": "eq. (23)–(40), (47)–(56) ; §3.7",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "criteria.3": {
+          "state": "explicit",
           "options": [],
-          "state": "not_examined"
+          "evidence": "Critère économique scalaire en espérance, avec contraintes ; plusieurs postes monétaires additionnés. Ni pondération multiobjectif ni optimisation lexicographique explicitée. Modalité « mono-objectif en espérance » manquante.",
+          "locator": "eq. (45), (49), (53)",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "information.0": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Mesures",
+            "Prévisions",
+            "Accords"
+          ],
+          "evidence": "Prévisions météo, demande et prix ; surplus/déficits transmis ; mesures RT et engagements DA. Les engagements ne sont pas accompagnés d’un protocole de versionnement.",
+          "locator": "§2 ; §3.7 ; eq. (54)",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "information.1": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Local",
+            "Partagé",
+            "Privé"
+          ],
+          "evidence": "Les MG gardent caractéristiques des ressources et profils de charge ; transmettent surplus/déficits à MGC. Confidentialité par limitation des données divulguées, sans preuve cryptographique.",
+          "locator": "§2 ; p. 12, conclusion",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "information.2": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Bruité",
+            "Exact"
+          ],
+          "evidence": "Prévisions incertaines modélisées en DA ; les auteurs supposent que les mesures RT éliminent les incertitudes courantes. « Exact » qualifie cette hypothèse, pas l’exactitude réelle des capteurs ou des prévisions futures.",
+          "locator": "§2 ; §3.2",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "information.3": {
-          "options": [],
-          "state": "not_examined"
+          "state": "inferred",
+          "options": [
+            "Vues différentes selon l’acteur"
+          ],
+          "evidence": "Périmètres d’information différents entre MG et MGC déduits de la rétention des profils locaux ; pas une étude de versions incohérentes dues aux pertes réseau.",
+          "locator": "§2 ; conclusion",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "communication.0": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Centralisée"
+          ],
+          "evidence": "Surplus et déficits adressés par les EMS locaux à l’EMS central MGC ; interface MGC–DSO. Architecture logique hiérarchique, sans technologie ni routage réseau précisés.",
+          "locator": "§2, fig. 1 ; §3.7",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "communication.1": {
+          "state": "not_specified",
           "options": [],
-          "state": "not_examined"
+          "evidence": "Aucune spécification des délais, pertes, ordre de livraison ou acquittements ; ne pas remplacer ce silence par « réseau parfait ».",
+          "locator": "Examen §2–5 et fig. 1–3",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "communication.2": {
+          "state": "not_specified",
           "options": [],
-          "state": "not_examined"
+          "evidence": "Aucun scénario de pertes isolées, rafales ou partitions de communication, ni modèle de panne d’EMS.",
+          "locator": "Examen §2–5",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "communication.3": {
+          "state": "not_specified",
           "options": [],
-          "state": "not_examined"
+          "evidence": "Pas de borne réseau, hypothèse de reconnexion ou corrélation des pannes de communication formulée.",
+          "locator": "Examen §2–5",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "computation.0": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Hiérarchique"
+          ],
+          "evidence": "EMS hybrides : optimisation locale au premier niveau, optimisation communautaire au second. Comparateur : quatre MG gérés séparément ; proposition : trois MG et un MGC.",
+          "locator": "§2 ; §4.1 ; §5.1 ; conclusion",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "computation.1": {
-          "options": [],
-          "state": "not_examined"
+          "state": "inferred",
+          "options": [
+            "Synchrone"
+          ],
+          "evidence": "Créneaux communs et calcul local précédant le calcul MGC suggèrent une coordination par étapes. Pas de barrière réseau explicite ni de protocole asynchrone démontré.",
+          "locator": "§2 ; §4.1 ; fig. 2–3",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "computation.2": {
+          "state": "explicit",
           "options": [
             "Optimisation"
           ],
-          "state": "documented",
-          "evidence": "Résumé / notice : codage initial, hypothèses détaillées à vérifier.",
-          "source": "https://www.sciencedirect.com/science/article/pii/S0306261922009321"
+          "evidence": "MILP stochastique pour DA, réduction de scénarios par MILP et optimisation à horizon glissant pour RT ; MATLAB/GAMS. Pas d’ADMM ni de négociation itérative proposée.",
+          "locator": "§3.2 ; §4 ; p. 8",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "computation.3": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Exécution"
+          ],
+          "evidence": "Application du premier intervalle RT et mise à jour périodique. Pas de procédure d’acquittement, réconciliation des accords ou repli en cas de calcul/communication défaillant.",
+          "locator": "§2, fig. 2–3 ; p. 10",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "guarantees.0": {
-          "options": [],
-          "state": "not_examined"
+          "state": "inferred",
+          "options": [
+            "Faisabilité"
+          ],
+          "evidence": "Une solution admissible satisfait les contraintes du modèle agrégé. Ce constat conditionnel ne prouve ni faisabilité récursive RT, ni stabilité électrique, ni sécurité des tensions/lignes.",
+          "locator": "§3–4, eq. (23)–(56)",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "guarantees.1": {
+          "state": "explicit",
           "options": [],
-          "state": "not_examined"
+          "evidence": "Optimalité revendiquée p. 8 via une affirmation de convexité des MILP incorrecte en général. Aucun certificat, gap solveur ou preuve d’optimalité globale du schéma hiérarchique fourni. Temps observés 1,023/1,116 s, sans borne d’échéance garantie.",
+          "locator": "fin §4.2, p. 8 ; tableau 3, p. 11",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "guarantees.2": {
+          "state": "not_specified",
           "options": [],
-          "state": "not_examined"
+          "evidence": "Pas de garantie formelle d’équité, participation avantageuse individuelle ou cohérence distribuée des engagements. L’amélioration collective chiffrée et la confidentialité par rétention ne les établissent pas.",
+          "locator": "§4–6",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "guarantees.3": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Modèle",
+            "Hypothèses",
+            "Régime"
+          ],
+          "evidence": "Portée : bilans agrégés, régime connecté, incertitude DA par scénarios, mesures RT supposées éliminer l’incertitude courante, prix interne préétabli et tarifs externes exogènes.",
+          "locator": "§2–4 ; §5",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "evaluation.0": {
+          "state": "explicit",
           "options": [],
-          "state": "not_examined"
+          "evidence": "Équations et contraintes explicites, mais aucun théorème propre au schéma DA/RT. Argument d’optimalité par convexité MILP invalide ; ne pas étiqueter le résultat comme preuve.",
+          "locator": "§3–4 ; fin §4.2",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "evaluation.1": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Simulation"
+          ],
+          "evidence": "Simulation MATLAB/GAMS sur Core i7 3,5 GHz, 12 Go RAM ; données/paramètres référencés en annexe. Ni cosimulation de communication ni essai matériel rapporté.",
+          "locator": "p. 8 ; §5 ; annexe A",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "evaluation.2": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Échelle",
+            "Références comparées"
+          ],
+          "evidence": "Quatre MG indépendants comparés à trois MG plus MGC ; avec/sans DR et marchés à prix unique/double. Pas de test de passage à l’échelle ou de panne. Le périmètre des ressources ajustables en RT diffère entre cas.",
+          "locator": "§5.1 ; tableaux 2–4 ; p. 10",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         },
         "evaluation.3": {
-          "options": [],
-          "state": "not_examined"
+          "state": "explicit",
+          "options": [
+            "Section",
+            "Équation",
+            "Données"
+          ],
+          "evidence": "Formules, schémas, paramètres A1–A4 et sources AEMO/WillyWeather/Solcast fournis ; code, séries exactes prêtes à rejouer, solveur GAMS et tolérance d’optimalité non identifiés dans le PDF.",
+          "locator": "§4.2 ; annexe A ; réf. 30–37",
+          "source": "https://doi.org/10.1016/j.apenergy.2022.119630"
         }
       },
-      "accessBlocked": true
+      "accessBlocked": false,
+      "auditDate": "2026-09-29"
     },
     "hu2021": {
       "name": "Hu et al. · 2021",
@@ -5388,8 +5588,8 @@
     }
   },
   "version": 2,
-  "updated": "2026-09-28",
-  "corpusNote": "12 travaux retenus. Zhou et Morstyn : 44 dimensions examinées sur texte auteur. Jani : lecture approfondie bloquée faute de texte intégral. Autres travaux : codage initial depuis les résumés.",
+  "updated": "2026-09-29",
+  "corpusNote": "12 travaux retenus. Zhou, Morstyn et Jani : 44 dimensions examinées sur texte intégral (versions précisées dans les fiches). Autres travaux : codage initial depuis les résumés.",
   "synthesis": [
     {
       "title": "Planifier et réviser",
@@ -5426,6 +5626,7 @@
     "Le faible remplissage initial provenait surtout de notre lecture limitée aux résumés.",
     "La grille mélange parfois une valeur du modèle, un résultat prouvé et une observation expérimentale ; ils sont désormais distingués dans les justifications.",
     "Une journée de simulation n’est pas un horizon de décision day-ahead.",
-    "Des modalités manquent : aversion au risque, architecture hybride, topologie contractuelle et garanties économiques. Les constats sont conservés même sans modalité adéquate."
+    "Des modalités manquent : aversion au risque, architecture hybride, topologie contractuelle et garanties économiques. Les constats sont conservés même sans modalité adéquate.",
+    "Jani confirme qu’il faut distinguer étapes DA/RT et niveaux MG/MGC, prix imposés et prix décidés, coûts d’écart signés et écarts physiques. Une revendication d’optimalité n’est pas une preuve."
   ]
 }
